@@ -1,0 +1,12 @@
+syntax = "proto3";
+message Condition {
+    string condition = 1;     //查询条件
+}
+
+message Result {
+    string message = 1;
+}
+
+service QueryService {
+    rpc Query(Condition) returns (Result) {}
+}

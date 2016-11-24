@@ -1,0 +1,81 @@
+{% extends "bootstrap/base.html" %}
+{% block title %}登录{% endblock %}
+
+{% block styles %}
+
+{{super()}}
+
+<link href="{{url_for('static', filename='css/one.style.css', _external=True)}}" rel="stylesheet" type="text/css"/>
+<link href="{{url_for('static', filename='css/font-awesome.min.css', _external=True)}}" rel="stylesheet"
+      type="text/css"/>
+<link href="{{url_for('static', filename='css/page_log_reg_v4.css', _external=True)}}" rel="stylesheet"
+      type="text/css"/>
+{% endblock %}
+
+
+{% block scripts %}
+
+{{super()}}
+<script src="{{url_for('static', filename='js/plugins/jquery.backstretch.min.js', _external=True)}}"></script>
+<script src="{{url_for('static', filename='js/login.js', _external=True)}}"></script>
+{% endblock %}
+
+
+{% block content %}
+<div class="container-fluid">
+    <div class="row equal-height-columns">
+        <div class="col-md-6 col-sm-6 hidden-xs image-block equal-height-column" style="min-height: 900px;"></div>
+
+        <div class="col-md-6 col-sm-6 form-block equal-height-column">
+            <a href="index.html"
+               style="display: block;width: 100%;text-decoration: initial;font-size: 28px;font-family: 'Microsoft Yahei'; color:#2a2a2a;">
+                <img src="{{url_for('static', filename='img/nav_logo.png', _external=True)}}" alt=""
+                     style="display: block;float: left;margin-top: -7px;margin-right: 5px;height: 60px;">快信
+            </a>
+            <h2 class="margin-bottom-30">请使用您的账号登录</h2>
+            <form id="logInForm">
+                <div class="login-block">
+                    <div style="height:28px">
+                        <div id="msg-error" style="visibility:hidden"></div>
+                    </div>
+                    <div class="input-group margin-bottom-20">
+                        <span class="input-group-addon rounded-left"><i class="icon-user color-green"></i></span>
+                        <input type="text" id="username" name="username" class="form-control rounded-right"
+                               placeholder="用户名">
+                    </div>
+
+                    <div class="input-group margin-bottom-20">
+                        <span class="input-group-addon rounded-left"><i class="icon-lock color-green"></i></span>
+                        <input type="password" id="password" name="password" class="form-control rounded-right"
+                               placeholder="密码">
+                    </div>
+                    <div class="checkbox">
+                        <ul class="list-inline">
+                            <li>
+                                <label>
+                                    <input type="checkbox"> 记住我
+                                </label>
+                            </li>
+
+                            <li class="pull-right">
+                                <a href="/forgetPwd/page">忘记密码？</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="row margin-bottom-70">
+                        <div class="col-md-12">
+                            <button id="sub_btn" type="button" class="btn-u btn-block rounded">进入&gt;&gt;</button>
+                        </div>
+                    </div>
+
+                    <div class="social-login text-center" style="height:160px;">
+                        <div class="or rounded-x">或</div>
+                        <p>还没有账户？<a href="/#contact">联系我们</a></p>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,130 @@
+body, p {
+    padding: 0;
+    margin: 0;
+    font-family: 'Microsoft Yahei', sans-serif;
+}
+
+.row {
+    margin: 0;
+}
+
+.personalInfoSecond {
+    background: url("../img/bg.png") no-repeat;
+    width: 100%;
+    height: 200px;
+}
+
+.personalInfoSecond img {
+    line-height: 200px;
+    float: left;
+    margin-top: 40px;
+}
+
+.personalInfoContentSecond {
+    color: white;
+    font-size: 16px;
+    float: left;
+    height: 200px;
+}
+
+.personalInfoContentSecond p {
+    margin-left: 10px;
+}
+
+.searchPart a {
+    text-decoration: none;
+}
+
+.otherInfo {
+    background: url('../img/button_bg.png') no-repeat;
+    height: 56px;
+    width: 152px;
+    line-height: 56px;
+    text-align: center;
+}
+
+.pictureStyle {
+    min-height: 42px;
+
+}
+
+.pictureStyle span, .pictureStyle img {
+    vertical-align: bottom;
+}
+
+.pictureStyle img {
+    margin-left: 70px;
+}
+
+.houseInfo, .carInfo {
+    padding-top: 16px;
+}
+
+/*result*/
+
+.houseInfo span, .carInfo span {
+    margin-left: 10px;
+}
+
+.houseInfo input, .carInfo input {
+    width: 186px;
+    height: 36px;
+    text-indent: 10px;
+    outline: none;
+    line-height: 43px;
+    border: none;
+    margin-top: 10px;
+    vertical-align: bottom;
+    background: url('../img/info.png');
+    margin-right: -4px;
+}
+
+#searchHouseInfo, #searchCarInfo {
+    background: #026435;
+    height: 30px;
+    width: 50px;
+    border: none;
+    color: white;
+    font-size: 16px;
+    margin-top: 1px;
+
+}
+
+.result {
+    margin-top: 30px;
+}
+
+.searchResult {
+    border: 1px solid #026435;
+    margin: 0 auto;
+}
+
+.searchResult p {
+    margin: 30px 0 30px 30px;
+    color: #026435;
+    font-size: 18px;
+}
+
+.isHidden {
+    display: none;
+}
+
+.row .col-md-5, .row .col-md-1 {
+    margin-bottom: 20px;
+}
+
+.row .col-md-2 {
+    min-height: 10px;
+}
+
+
+ul li {
+    list-style: none;
+    height: 30px;
+
+}
+
+ul .isNow {
+    color: #026435;
+    list-style-image: url("../img/dotted.png");
+}

@@ -1,0 +1,57 @@
+body, p {
+    margin: 0;
+    padding: 0;
+    background: #f9f9f9;
+    font-family: 'Microsoft YaHei';
+}
+
+
+
+.container {
+    margin: 200px auto;
+    text-align: center;
+}
+
+.search {
+    margin-top: 50px;
+    width: 100%;
+    clear: both;
+}
+
+.searchInfo {
+    border: 1px solid #999;
+    width: 800px;
+    height: 50px;
+    margin: 0 auto;
+    text-align: left;
+    padding-left: 30px;
+    background: white;
+}
+
+.searchInfo img {
+    vertical-align: middle;
+}
+
+.searchInfo input {
+    width: 70%;
+    margin-left: 5px;
+    line-height: 46px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+}
+
+.searchInfo input:focus {
+    border: none;
+}
+
+#search {
+    width: 126px;
+    height: 50px;
+    display: inline-block;
+    border: none;
+    color: white;
+    font-size: 16px;
+    background: #026435;
+    float: right;
+}

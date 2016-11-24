@@ -1,0 +1,37 @@
+{% extends "nav.html" %}
+
+{% block title %}查询{% endblock %}
+
+{% block styles %}
+{{super()}}　
+
+<link href="{{url_for('static', filename='css/search.css', _external=True)}}" rel="stylesheet"
+      type="text/css"/>
+
+{% endblock %}
+
+{% block scripts %}
+{{super()}}
+<script src="{{url_for('static', filename='js/search.js', _external=True)}}"></script>
+
+{% endblock %}
+
+{% block every_content %}
+<div class="container">
+    <img src="../../static/img/logo.png"/>
+    <div class="search">
+        <div class="searchInfo">
+            <img src="../../static/img/search.png">
+            <input type="text"  placeholder="请输入搜索信息，例如张三,身份证号">
+            <button id="search">搜索</button>
+        </div>
+
+    </div>
+
+
+</div>
+
+
+{% endblock %}
+
+

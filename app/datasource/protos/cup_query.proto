@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+option java_package = "com.cardpay.datasource.cup";
+option java_outer_classname = "CupQueryImpl";
+option java_multiple_files = true;
+
+message CupCondition {
+    string bakCardId = 1;     //查询条件
+    string name = 2;//姓名
+    string IDCard = 3;//身份证
+    string phone = 4;//电话
+}
+
+message CupResult {
+    string result = 1;
+}
+
+service CupQueryService {
+    rpc Query(CupCondition) returns (CupResult) {}
+}

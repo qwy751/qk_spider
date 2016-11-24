@@ -1,0 +1,68 @@
+
+# 中智诚
+zzc:
+  # 用户名
+  name: "yecm@qkjr.com.cn"
+  # 密码
+  password: "xfBJKD6x-vHuQZyrWfZ2"
+  # 反欺诈API入口
+  cheatListBaseUrl: "https://nezha.intellicredit.cn/api/v2/applications"
+  # 黑名单API入口
+  backListBaseUrl: "https://nezha.intellicredit.cn/api/v2/blacklist"
+
+# 鹏元
+pengyuan:
+  # api 入口地址
+  url: "http://www.pycredit.com:9001/services/WebServiceSingleQuery?wsdl"
+  # 用户名
+  user_name: 'qkwsquery'
+  # 密码
+  password: 'qW+06PsdwM+y1fjeH7w3vw=='
+  # 数据源名称
+  source: 'pengyuan'
+
+# 银联
+cup:
+  #开发者ID
+  developmentId: "FCA0WKKJOBUEJUFAI0BVRKQBJNEPJEJQ"
+  #私钥
+  privateKey: "MIICdgIBADANBgkqhkiG9w0BAQEFAASCAmAwggJcAgEAAoGBAKEbskvTHcW93cRzQ372Iw\
+              ajhv+LPNJS4jPzTzjsPP776qPTPS4uU5ODTQn3bv7tiK4PgxLvUq+1DT2FXWY8t+u3CTuF\
+              yxFn92WyzqxFely6mhdCkXp/b1J2BIdHCrogSKvkm+HQIIUWkcEPxI8oDsi8IKWNVnpTqI\
+              blaOm/QaHFAgMBAAECgYA2Rr1vnCVYnBmdeHORz1yHfQobB46rEO9SLzNOaxA1mys2nBDt\
+              gP/5H3AR3oFPczjr4x/2fhguR+G5CzgnHGedgYFWV99BJD/0mlVOeYn3cFS/aHWPQhLVEJ\
+              2NcN90UfgkIEVGOQ8/sZm17rT8ogbzYPpQ6ebnypEc/dER09/oNQJBAN3nmbT8/xe3SDw6\
+              qF0cu4k31ShyCDKuhyRrKfxX0IMEILyRdWv9Bjv4gB8MT8ngI1CvPX5wnhHp1m9Lm6DC84\
+              8CQQC53Ln0FK7q6VGUAbQgSyjWD8PGa7458gYZTK0d1xALwpmxAS07Fn01jfo4HvkOq578\
+              RrpALXYdBoYVXgrqrltrAkEAjQVvYF7b+oVm6afZcXseD2ElHNQDM7pIdjOIdi6Ue363Ez\
+              9ZoSwmtxwAyDp5xnCj4NXNPbpyKi4yMX6aQ7tBLwJASfT40ZUBXVxmJ7zdzhPaNgOj5Wqu\
+              ESSrJJoMMNmI+wT+Xx6WvvJd9FeAf6BjfmDwLHaAWlU8sKQN6qa3NVcX7QJABu7lUoSWdO\
+              fDYyoADtgKgAEkOcQrtPzcW36uqec4SB+KBjAn0DpASpRF1WoWM7wkZdOZp4EDtCvVPa6Q\
+              KiAf/g=="
+  #公钥
+  publicKey: "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCesDeoyIcYzpbZzLemrIiMfqyuus5OcP6\
+             jiJlto7dCtIvTo40AKhY/UrKvwkmBMtRryY7nFejtelszZUOXr9Sv2sVt7CLsejLuFdGjbtv\
+             PEq6qBPVLIzri43dAKrS2GqnYm9fYSO+KLXWioZgEDNGxwfePH5BiUCZ+hsNSoNBJfwIDAQAB"
+  #开发模式
+  debugMode: false
+  #设置访问的url地址,URL为我司给出的String类型字符串
+  apiLocation: "http://192.168.8.60/repoweb/api/UPACommonPerCardInfoServer.do"
+  #识别码
+  distinguishCode: "2101"
+
+qianhai:
+    netType: Dmz
+    transName: query
+    productId: blacklist
+    apiVer: v1
+    messageCode: MSC8004
+    orgCode: 10000000
+    chnlId: qhcs-dcs
+    authCode: CRT001A2
+    userName: V_PA025_QHCS_DCS
+    userPassword: weblogic1
+    checkSum: SK803@!QLF-D25WEDA5E52DA
+    hxd:
+        product_address: https://qhzx-dcs.pingan.com.cn
+        test_address: https://test-qhzx.pingan.com.cn:5443
+        address: https://test-qhzx.pingan.com.cn:5443/do/dmz/query/blacklist/v1/MSC8004

@@ -1,0 +1,953 @@
+{% extends "bootstrap/base.html" %}
+
+{% block styles %}
+
+{{super()}}
+
+<link href="{{url_for('static', filename='css/one.style.css', _external=True)}}" rel="stylesheet" type="text/css"/>
+<link href="{{url_for('static', filename='css/font-awesome.min.css', _external=True)}}" rel="stylesheet"
+      type="text/css"/>
+<link rel="stylesheet" href="{{url_for('static', filename='css/settings.css', _external=True)}}" type="text/css"
+      media="screen">
+<link rel="stylesheet" href="{{url_for('static', filename='css/settings-ie8.css', _external=True)}}" type="text/css"
+      media="screen">
+{% endblock %}
+
+
+{% block scripts %}
+
+{{super()}}
+<script src="{{url_for('static', filename='js/plugins/one.app.js', _external=True)}}"></script>
+<script src="{{url_for('static', filename='js/index.js', _external=True)}}"></script>
+<script src="{{url_for('static', filename='js/plugins/jquery.themepunch.tools.min.js', _external=True)}}"></script>
+<script src="{{url_for('static', filename='js/plugins/jquery.themepunch.revolution.min.js', _external=True)}}"></script>
+<script src="{{url_for('static', filename='js/plugins/revolution-slider.js', _external=True)}}"></script>
+
+{% endblock %}
+
+
+{% block navbar %}
+<nav class="one-page-header navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+        <div class="menu-container page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <a class="navbar-brand" href="#intro" style="font-family: '幼圆';">
+                <span>快信</span></a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <div class="menu-container">
+                <ul class="nav navbar-nav">
+                    <li class="page-scroll home">
+                        <a href="#body">首页</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="#about">关于我们</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="#services">服务</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="#news">新闻</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="#partner">合作伙伴</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="#client">客户</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="#contact">联系我们</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav>
+{% endblock %}
+
+
+{% block content %}
+<section id="intro" class="intro-section">
+    <div class="fullscreenbanner-container">
+        <div class="fullscreenbanner">
+            <ul>
+                <!-- SLIDE 1 -->
+                <li data-transition="curtain-1" data-slotamount="5" data-masterspeed="700" data-title="服务">
+                    <!-- MAIN IMAGE -->
+                    <img src="{{url_for('static', filename='img/index/bg2.jpg', _external=True)}}" alt="slidebg1" data-bgfit="cover"
+                         data-bgposition="center center" data-bgrepeat="no-repeat">
+
+                    <!-- LAYERS -->
+                    <div class="tp-caption rs-caption-1 sft start"
+                         data-x="center"
+                         data-hoffset="0"
+                         data-y="100"
+                         data-speed="800"
+                         data-start="1000"
+                         data-easing="Back.easeInOut"
+                         data-endspeed="300">实时&nbsp;&nbsp;高效&nbsp;&nbsp;精准
+                    </div>
+
+                    <!-- LAYER -->
+                    <div class="tp-caption rs-caption-2 sft"
+                         data-x="center"
+                         data-hoffset="0"
+                         data-y="200"
+                         data-speed="1000"
+                         data-start="2000"
+                         data-easing="Power4.easeOut"
+                         data-endspeed="300"
+                         data-endeasing="Power1.easeIn"
+                         data-captionhidden="off"
+                         style="z-index: 6">
+                        乾康为机构客户提供基于互联网的在线资信审核和授信评估平台。
+                    </div>
+
+                    <!-- LAYER -->
+                    <div class="tp-caption rs-caption-3 sft"
+                         data-x="center"
+                         data-hoffset="0"
+                         data-y="360"
+                         data-speed="800"
+                         data-start="3000"
+                         data-easing="Power4.easeOut"
+                         data-endspeed="300"
+                         data-endeasing="Power1.easeIn"
+                         data-captionhidden="off"
+                         style="z-index: 6">
+									<span class="page-scroll">
+										<a href="/auth/login" class="btn-u btn-brd btn-brd-hover btn-u-light">进入&gt;&gt;</a>
+									</span>
+                        <span class="page-scroll">
+										<a href="#contact" class="btn-u btn-brd btn-brd-hover btn-u-light">联系我们</a>
+									</span>
+                    </div>
+                </li>
+
+                <!-- SLIDE 2 -->
+                <li data-transition="slideup" data-slotamount="5" data-masterspeed="1000" data-title="创新">
+                    <!-- MAIN IMAGE -->
+                    <img src="{{url_for('static', filename='img/index/bg1.jpg', _external=True)}}"" alt="slidebg1" data-bgfit="cover"
+                         data-bgposition="center center" data-bgrepeat="no-repeat">
+
+                    <!-- LAYERS -->
+                    <div class="tp-caption rs-caption-1 sft start"
+                         data-x="center"
+                         data-hoffset="0"
+                         data-y="100"
+                         data-speed="800"
+                         data-start="1000"
+                         data-easing="Back.easeInOut"
+                         data-endspeed="300">精准&nbsp;&nbsp;专业&nbsp;&nbsp;个性化
+                    </div>
+
+                    <!-- LAYER -->
+                    <div class="tp-caption rs-caption-2 sft"
+                         data-x="center"
+                         data-hoffset="0"
+                         data-y="200"
+                         data-speed="1000"
+                         data-start="2000"
+                         data-easing="Power4.easeOut"
+                         data-endspeed="300"
+                         data-endeasing="Power1.easeIn"
+                         data-captionhidden="off"
+                         style="z-index: 6">
+                        多维度、独特算法授信评估模型，支持个性化定制。
+                    </div>
+
+                    <!-- LAYER -->
+                    <div class="tp-caption rs-caption-3 sft"
+                         data-x="center"
+                         data-hoffset="0"
+                         data-y="360"
+                         data-speed="800"
+                         data-start="3000"
+                         data-easing="Power4.easeOut"
+                         data-endspeed="300"
+                         data-endeasing="Power1.easeIn"
+                         data-captionhidden="off"
+                         style="z-index: 6">
+									<span class="page-scroll">
+										<a href="/auth/login" class="btn-u btn-brd btn-brd-hover btn-u-light">进入&gt;&gt;</a>
+									</span>
+                        <span class="page-scroll">
+										<a href="#about" class="btn-u btn-brd btn-brd-hover btn-u-light">关于我们</a>
+									</span>
+                    </div>
+                </li>
+
+
+                <!-- SLIDE 3 -->
+                <li data-transition="slideup" data-slotamount="5" data-masterspeed="700" data-title="专业">
+                    <!-- MAIN IMAGE -->
+                    <img src="{{url_for('static', filename='img/index/bg3.jpg', _external=True)}}"" alt="slidebg1" data-bgfit="cover"
+                         data-bgposition="center center" data-bgrepeat="no-repeat">
+
+                    <!-- LAYERS -->
+                    <div class="tp-caption rs-caption-1 sft start"
+                         data-x="center"
+                         data-hoffset="0"
+                         data-y="110"
+                         data-speed="800"
+                         data-start="1000"
+                         data-easing="Back.easeInOut"
+                         data-endspeed="300">精英授信评估专家
+                    </div>
+
+                    <!-- LAYER -->
+                    <div class="tp-caption rs-caption-2 sfb"
+                         data-x="center"
+                         data-hoffset="0"
+                         data-y="210"
+                         data-speed="800"
+                         data-start="2000"
+                         data-easing="Power4.easeOut"
+                         data-endspeed="300"
+                         data-endeasing="Power1.easeIn"
+                         data-captionhidden="off"
+                         style="z-index: 6">
+                        乾康公司的资信审核和授信评估专家均来自国内各银行、世界五百强企业高级管理人员，具备金融从业经历、金融管理咨询经验、金融专业MBA或博士以上教育背景，
+                        <br>全部拥有国际名校教育背景以及国际金融机构或咨询机构的工作经历，行业和领域经验丰富。
+                    </div>
+
+                    <!-- LAYER -->
+                    <div class="tp-caption rs-caption-3 sfb"
+                         data-x="center"
+                         data-hoffset="0"
+                         data-y="370"
+                         data-speed="800"
+                         data-start="3000"
+                         data-easing="Power4.easeOut"
+                         data-endspeed="300"
+                         data-endeasing="Power1.easeIn"
+                         data-captionhidden="off"
+                         style="z-index: 6">
+									<span class="page-scroll">
+										<a href="/auth/login" class="btn-u btn-brd btn-brd-hover btn-u-light">进入&gt;&gt;</a>
+									</span>
+                        <span class="page-scroll">
+										<a href="#portfolio" class="btn-u btn-brd btn-brd-hover btn-u-light">我们的客户</a>
+									</span>
+                    </div>
+                </li>
+
+                <!-- SLIDE 4 -->
+                <li data-transition="slideup" data-slotamount="5" data-masterspeed="700" data-title="专业">
+                    <!-- MAIN IMAGE -->
+                    <img src="{{url_for('static', filename='img/index/bg4.jpg', _external=True)}}"" alt="slidebg1" data-bgfit="cover"
+                         data-bgposition="center center" data-bgrepeat="no-repeat">
+
+                    <!-- LAYERS -->
+                    <div class="tp-caption rs-caption-1 sft start"
+                         data-x="center"
+                         data-hoffset="0"
+                         data-y="110"
+                         data-speed="800"
+                         data-start="1000"
+                         data-easing="Back.easeInOut"
+                         data-endspeed="300">互联网&nbsp;&nbsp;大数据
+                    </div>
+
+                    <!-- LAYER -->
+                    <div class="tp-caption rs-caption-2 sfb"
+                         data-x="center"
+                         data-hoffset="0"
+                         data-y="210"
+                         data-speed="800"
+                         data-start="2000"
+                         data-easing="Power4.easeOut"
+                         data-endspeed="300"
+                         data-endeasing="Power1.easeIn"
+                         data-captionhidden="off"
+                         style="z-index: 6">
+                        乾康与多个大数据领域战略合作伙伴共同提供基于电信、生活缴费、上网行为等大数据分析平台，构建先进、实时的用户信用评估模型。
+                    </div>
+
+                    <!-- LAYER -->
+                    <div class="tp-caption rs-caption-3 sfb"
+                         data-x="center"
+                         data-hoffset="0"
+                         data-y="370"
+                         data-speed="800"
+                         data-start="3000"
+                         data-easing="Power4.easeOut"
+                         data-endspeed="300"
+                         data-endeasing="Power1.easeIn"
+                         data-captionhidden="off"
+                         style="z-index: 6">
+									<span class="page-scroll">
+										<a href="auth/login" class="btn-u btn-brd btn-brd-hover btn-u-light">进入&gt;&gt;</a>
+									</span>
+                        <span class="page-scroll">
+										<a href="#portfolio" class="btn-u btn-brd btn-brd-hover btn-u-light">我们的伙伴</a>
+									</span>
+                    </div>
+                </li>
+            </ul>
+            <div class="tp-bannertimer tp-bottom"></div>
+            <div class="tp-dottedoverlay twoxtwo"></div>
+        </div>
+    </div>
+</section>
+<!-- End Intro Section -->
+
+<!--  About Section -->
+<section id="about" class="about-section section-first">
+    <div class="block-v1">
+        <div class="container">
+            <div class="row content-boxes-v3">
+                <div class="col-md-4 md-margin-bottom-30"><i
+                        class="icon-custom rounded-x icon-bg-dark fa fa-lightbulb-o"></i>
+                    <div class="content-boxes-in-v3">
+                        <h2 class="heading-sm">远程授信</h2>
+                        <p>
+                            基于互联网平台的在线远程授信。
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-4 md-margin-bottom-30"><i class="icon-custom rounded-x icon-bg-dark fa fa-flask"></i>
+                    <div class="content-boxes-in-v3">
+                        <h2 class="heading-sm">专家评估</h2>
+                        <p>
+                            拥有一支资深的专家队伍，为客户提供便捷的远程授信评估。
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <i class="icon-custom rounded-x icon-bg-dark fa fa-bolt"></i>
+                    <div class="content-boxes-in-v3">
+                        <h2 class="heading-sm">大数据</h2>
+                        <p>
+                            通过战略合作伙伴的大数据分析支持，提供更多维度的实时信用数据。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="about-image bg-grey">
+        <div class="container">
+            <div class="title-v1">
+                <h1>乾康金融</h1>
+                <p>
+                    <strong>乾康(上海)金融信息服务有限公司</strong>是一家专注于金融领域专业管理咨询以及运营实施的服务机构。<br>公司的主营业务是为银行等金融机构提供微小贷款和信用卡业务的咨询及运营、人力资源管理、新产品创新等咨询服务<br>以及协助实现银行互联网金融平台建设——金融OTO商业模式服务平台。
+                </p>
+            </div>
+            <div class="img-center" style="margin-bottom: 100px;">
+                <a href="http://www.qkjr.com.cn"><img class="img-responsive" src="{{url_for('static', filename='img/index/other/001.png', _external=True)}}" ></a></div>
+        </div>
+    </div>
+
+    <div class="parallax-quote parallaxBg">
+        <div class="container">
+            <div class="parallax-quote-in">
+                <p>
+                    权威资质，专业风控，独有的<span class="color-green">四维风控模型</span>
+                </p>
+                <small>- 中国互联网金融研究院成员单位 -</small>
+            </div>
+        </div>
+    </div>
+
+    <div class="team-v1 bg-grey content-lg">
+        <div class="container">
+            <div class="title-v1">
+                <h2>资深专家团队</h2>
+                <p>
+                    乾康公司咨询顾问<strong>均来自</strong>国内各银行、世界五百强企业高级管理人员，具备金融从业经历、<br>金融管理咨询经验、金融专业MBA或博士以上教育背景，<strong>全部拥有</strong>国际名校教育背景以及国际金融机构或咨询机构的工作经历。
+                </p>
+            </div>
+
+            <ul class="list-unstyled row">
+                <li class="col-sm-3 col-xs-6 md-margin-bottom-30">
+                    <div class="team-img">
+                        <img class="img-responsive" src="{{url_for('static', filename='img/index/experts/tan.png', _external=True)}}" alt="">
+                        <ul>
+                            <li>
+                                <a href="mailto:tanxy@qkjr.com.cn">
+                                    <i class="icon-custom icon-sm rounded-x icon-envelope"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <h3>檀晓阳</h3>
+                    <h4>/ 副总裁</h4>
+                    <p>
+                        任多家银行银行卡首席顾问，曾成功组建某农商行信用卡中心，获得“银行卡知名品牌”称号...
+                    </p>
+                </li>
+                <li class="col-sm-3 col-xs-6 md-margin-bottom-30">
+                    <div class="team-img">
+                        <img class="img-responsive" src="{{url_for('static', filename='img/index/experts/guan.png', _external=True)}}" alt="">
+                        <ul>
+                            <li>
+                                <a href="mailto:guanrf@qkjr.com.cn">
+                                    <i class="icon-custom icon-sm rounded-x icon-envelope"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <h3>管荣峰</h3>
+                    <h4>/ 项目总监</h4>
+                    <p>
+                        十余年银行零售业务的推广和产品的开发经验。具有百余人团队的管理经验，通过多家银行的零售业务推广，获得超预期的市场效果...
+                    </p>
+                </li>
+                <li class="col-sm-3 col-xs-6">
+                    <div class="team-img">
+                        <img class="img-responsive" src="{{url_for('static', filename='img/index/experts/li.png', _external=True)}}" alt="">
+                        <ul>
+                            <li>
+                                <a href="mailto:lil@qkjr.com.cn">
+                                    <i class="icon-custom icon-sm rounded-x icon-envelope"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <h3>李丽</h3>
+                    <h4>/ </h4>
+                    <p>
+                        ...
+                    </p>
+                </li>
+                <li class="col-sm-3 col-xs-6">
+                    <div class="team-img">
+                        <img class="img-responsive" src="{{url_for('static', filename='img/index/experts/yu.png', _external=True)}}" alt="">
+                        <ul>
+                            <li>
+                                <a href="mailto:yuxh@qkjr.com.cn">
+                                    <i class="icon-custom icon-sm rounded-x icon-envelope"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <h3>于向华</h3>
+                    <h4>/ 项目经理</h4>
+                    <p>
+                        具有丰富的大型团队组建培训及其运营管理经验。管理客户经理达1000余名，培养初级管理者230余名，培养中级管理者20余名，培养内训师30余名...
+                    </p>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="parallax-counter parallaxBg">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-3 col-xs-6">
+                    <div class="counters">
+                        <span class="counter">10629</span>
+                        <h4>授信客户</h4>
+                    </div>
+                </div>
+                <div class="col-sm-3 col-xs-6">
+                    <div class="counters">
+                        <span class="counter">27700</span>
+                        <h4>进件申请</h4>
+                    </div>
+                </div>
+                <div class="col-sm-3 col-xs-6">
+                    <div class="counters">
+                        <span class="counter">28</span>
+                        <h4>机构客户</h4>
+                    </div>
+                </div>
+                <div class="col-sm-3 col-xs-6">
+                    <div class="counters">
+                        <span class="counter">19</span>
+                        <h4>合作伙伴</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--  About Section -->
+
+<!-- Services Section -->
+<section id="services">
+    <div class="container content-lg">
+        <div class="title-v1">
+            <h2>远程授信评估</h2>
+            <p>
+                基于互联网平台的<strong>在线远程</strong>授信，<br>实现在线实时和非实时授信评估，定制审核审批流程。
+            </p>
+        </div>
+
+        <div class="row service-box-v1">
+            <div class="col-md-4 col-sm-12">
+                <div class="service-block service-block-default">
+                    <i class="icon-custom icon-lg icon-bg-u rounded-x fa fa-lightbulb-o"></i>
+                    <h2 class="heading-md">多产品授信评估支持</h2>
+                    <p>
+                        根据行业、领域、产品进件分案<br>&nbsp;
+                    </p>
+                    <ul class="list-unstyled">
+                        <li>小微贷款产品</li>
+                        <li>信用卡产品</li>
+                        <li>消费信贷产品</li>
+                        <li>...</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-12">
+                <div class="service-block service-block-default">
+                    <i class="icon-custom icon-lg icon-bg-u rounded-x icon-line icon-present"></i>
+                    <h2 class="heading-sm">可定制审核审批流程</h2>
+                    <p>
+                        基于工作流引擎，可根据需求定制<br>审核审批流程
+                    </p>
+                    <ul class="list-unstyled">
+                        <li>实时授信评估模型授信</li>
+                        <li>线上独立专家授信</li>
+                        <li>线上贷审会模式授信</li>
+                        <li>...</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-12">
+                <div class="service-block service-block-default">
+                    <i class="icon-custom icon-lg icon-bg-u rounded-x icon-line icon-user"></i>
+                    <h2 class="heading-sm">授信评估专家</h2>
+                    <p>
+                        资深的授信评估专家提供便捷的<br>远程授信评估
+                    </p>
+                    <ul class="list-unstyled">
+                        <li>资深的授信评估专家</li>
+                        <li>丰富的领域、行业经验</li>
+                        <li>先进的授信评估体系</li>
+                        <li>便捷的在线评估</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="row service-box-v1">
+
+            <div class="col-md-6 col-sm-12">
+                <div class="service-block service-block-default">
+                    <i class="icon-custom icon-lg icon-bg-u rounded-x icon-line icon-bar-chart"></i>
+                    <h2 class="heading-sm">授信评估模型</h2>
+                    <p>
+                        先进的四维授信评估模型<br>&nbsp;
+                    </p>
+                    <ul class="list-unstyled">
+                        <li>还款能力</li>
+                        <li>经营状况</li>
+                        <li>生活状态</li>
+                        <li>道德品质</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-6 col-sm-12">
+                <div class="service-block service-block-default">
+                    <i class="icon-custom icon-lg icon-bg-u rounded-x fa fa-database"></i>
+                    <h2 class="heading-sm">大数据</h2>
+                    <p>
+                        通过战略合作伙伴的大数据分析支持，提供<br>更多维度的实时信用数据
+                    </p>
+                    <ul class="list-unstyled">
+                        <li>在线支付数据</li>
+                        <li>生活缴费</li>
+                        <li>上网行为</li>
+                        <li>新闻舆情</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</section>
+<!-- End Services Section -->
+
+<!-- News Section -->
+<section id="news" class="news-section">
+    <div class="container content-lg">
+        <div class="title-v1">
+            <h2>最新动态</h2>
+            <p>
+            </p>
+        </div>
+
+        <div class="row news-v1">
+            <div class="col-md-4 md-margin-bottom-40">
+                <div class="news-v1-in">
+                    <img class="img-responsive" src="{{url_for('static', filename='img/index/other/news1.png', _external=True)}}" alt="">
+                    <h3>
+                        <a href="#">
+                            中国互联网研究院授牌仪式在北京国家会议中心隆重举行
+                        </a>
+                    </h3>
+                    <p>
+                        2015年1月，由中国电子商务协会主办的2015中国互联网银行高峰论坛暨中国互联网研究院授牌仪式在北京国家会议中心隆重举行，中国互联网银行研究院消费金融研究中心在此背景下应运而生。中国互联网银行研究院消费金融研究中心坚守金融业诚信、审慎、稳健、盈利的经营本质，为推进中国居民能够受惠于普惠金融而培养相应的优秀人才做出应有的贡献。
+                    </p>
+                    <ul class="list-inline news-v1-info">
+                        <li>
+                            <a href="#">崔茜子</a>
+                        </li>
+                        <li>|</li>
+                        <li>
+                            <i class="fa fa-clock-o"></i>
+                            2015年1月
+                        </li>
+                        <li class="pull-right">
+                            <a href="#">
+                                <i class="fa fa-eye"></i>
+                                565
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-4 md-margin-bottom-40">
+                <div class="news-v1-in">
+                    <img class="img-responsive" src="{{url_for('static', filename='img/index/other/news2.png', _external=True)}}" alt="">
+                    <h3>
+                        <a href="#">
+                            中国互联网银行研究院消费金融研究中心批复成立
+                        </a>
+                    </h3>
+                    <p>
+                        2016年3月16日，中国互联网银行研究院消费金融研究中心批复成立，任命周滨为研究中心主任委员，任命贺磊、刘学军为研究中心副主任，并由周滨全面负责研究中心相关工作。
+                    </p>
+                    <ul class="list-inline news-v1-info">
+                        <li>
+                            <a href="#">崔茜子</a>
+                        </li>
+                        <li>|</li>
+                        <li>
+                            <i class="fa fa-clock-o"></i>
+                            2016年3月
+                        </li>
+                        <li class="pull-right">
+                            <a href="#">
+                                <i class="fa fa-eye"></i>
+                                324
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="news-v1-in">
+                    <img class="img-responsive" src="{{url_for('static', filename='img/index/other/news3.jpg', _external=True)}}" alt="">
+                    <h3>
+                        <a href="#">
+                            消费金融管理师培训惊现沪上“专才”培训填补行业缺口
+                        </a>
+                    </h3>
+                    <p>
+                        近几年来，互联网金融行业迅速崛起，一方面，吸引各方资本强势入驻。据相关数据显示，截止到2016年3月底，互金行业一共吸引了约1398亿元人民币的风投资金；另一方面，互金人才“告急”，据另一组数据显示，未来数年中国互联网金融人才缺口将高达300多万，其中，消费金融人才缺口尤为突出。
+
+                        为规范消费金融业务的操作标准，培养消费金融专业人才，2016年3月16日，中国互联网金融研究院批准乾康金服（北京）信息技术有限公司成立“中国互联网金融研究院消费金融研究中心（以下简称“中心”），中心设立并开展“互联网消费金融管理师”职业技能培训。
+
+                        截止日前，“互联网消费金融管理师”职业培训已成功举办两期，近60名学员参加培训，95%的学员成功通过认证考试，取得《互联网消费金融管理师》证书。据透露，第三期“互联网消费金融管理师”职业技能培训将落户上海，相关报名渠道现已开通。
+                    </p>
+                    <ul class="list-inline news-v1-info">
+                        <li>
+                            <span>By</span>
+                            <a href="#">崔茜子</a>
+                        </li>
+                        <li>|</li>
+                        <li>
+                            <i class="fa fa-clock-o"></i>
+                            2016年6月
+                        </li>
+                        <li class="pull-right">
+                            <a href="#">
+                                <i class="fa fa-comments-o"></i>
+                                765
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="parallax-twitter parallaxBg" >
+        <div class="container parallax-twitter-in ">
+            <div class="margin-bottom-30" style="position: relative">
+                <div  id="chat" style="display: none; position: absolute; z-index: 100;box-shadow: 6px 6px 4px #888888;"><img src="{{url_for('static', filename='img/index/other/login_chat.png', _external=True)}}" style="width: 140px;height: 140px;"></div>
+                <i  class="icon-custom rounded-x icon-bg-green fa fa-weixin" ></i>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End News Section -->
+
+<!-- Partner Section -->
+<section id="partner" class="about-section">
+    <div class="container content-lg">
+        <div class="title-v1">
+            <h2>我们的合作伙伴</h2>
+            <p>
+                通过战略合作伙伴的大数据分析支持，提供更多维度的实时信用数据。
+            </p>
+        </div>
+
+        <div class="cube-portfolio">
+            <div id="filters-container" class="cbp-l-filters-button">
+            </div>
+            <!--/end Filters Container-->
+
+            <div id="grid-container" class="cbp-l-grid-gallery">
+                <div class="cbp-item print motion">
+                    <a href="http://www.intellicredit.cn/" class="cbp-caption "
+                       data-title="World Clock Widget<br>
+											by Paul Flavius Nechita">
+                        <div class="cbp-caption-defaultWrap">
+                            <img src="{{url_for('static', filename='img/index/other/zhongzhi.png', _external=True)}}" alt=""></div>
+                        <div class="cbp-caption-activeWrap">
+                            <div class="cbp-l-caption-alignLeft">
+                                <div class="cbp-l-caption-body">
+                                    <div class="cbp-l-caption-title">中智诚征信</div>
+                                    <div class="cbp-l-caption-desc">反欺诈多维黑名单数据</div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="cbp-item web-design">
+                    <a href="http://www.unionpayadvisors.com/" class="cbp-caption "
+                       data-title="Bolt UI<br>
+											by Tiberiu Neamu">
+                        <div class="cbp-caption-defaultWrap">
+                            <img src="{{url_for('static', filename='img/index/other/yinlian.png', _external=True)}}" alt=""></div>
+                        <div class="cbp-caption-activeWrap">
+                            <div class="cbp-l-caption-alignLeft">
+                                <div class="cbp-l-caption-body">
+                                    <div class="cbp-l-caption-title">银联智策</div>
+                                    <div class="cbp-l-caption-desc">银联大数据分析</div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="cbp-item print motion">
+                    <a href="http://ctbigdata.com/" class="cbp-caption "
+                       data-title="WhereTO App<br>
+											by Tiberiu Neamu">
+                        <div class="cbp-caption-defaultWrap">
+                            <img src="{{url_for('static', filename='img/index/other/dengta.png', _external=True)}}"></div>
+                        <div class="cbp-caption-activeWrap">
+                            <div class="cbp-l-caption-alignLeft">
+                                <div class="cbp-l-caption-body">
+                                    <div class="cbp-l-caption-title">灯塔电信数据</div>
+                                    <div class="cbp-l-caption-desc">实时互联网用户数据</div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="cbp-item web-design print">
+                    <a href="http://www.beyonditsm.com/" class="cbp-caption "
+                       data-title="iDevices<br>
+											by Tiberiu Neamu">
+                        <div class="cbp-caption-defaultWrap">
+                            <img src="{{url_for('static', filename='img/index/other/boyuan.png', _external=True)}}"></div>
+                        <div class="cbp-caption-activeWrap">
+                            <div class="cbp-l-caption-alignLeft">
+                                <div class="cbp-l-caption-body">
+                                    <div class="cbp-l-caption-title">博辕大数据</div>
+                                    <div class="cbp-l-caption-desc">社交数据分析</div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="cbp-item motion">
+                    <a href="http://www.hengbao.com/" class="cbp-caption " data-title="Seemple* Music for iPad<br>
+											by Tiberiu Neamu">
+                        <div class="cbp-caption-defaultWrap">
+                            <img src="{{url_for('static', filename='img/index/other/hengbao.png', _external=True)}}"></div>
+                        <div class="cbp-caption-activeWrap">
+                            <div class="cbp-l-caption-alignLeft">
+                                <div class="cbp-l-caption-body">
+                                    <div class="cbp-l-caption-title">恒宝智能</div>
+                                    <div class="cbp-l-caption-desc">POS机刷卡支付数据</div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End Partner Section -->
+
+<!-- Client Section -->
+<section id="client" class="about-section" style="padding-bottom: 150px;">
+    <div class="clients-section parallaxBg">
+        <div class="container">
+            <div class="title-v1">
+                <h2>我们的客户</h2>
+            </div>
+            <ul class="owl-clients-v2">
+                <li class="item">
+                    <a href="#">
+                        <img src="{{url_for('static', filename='img/index/bank/csnsh.jpg', _external=True)}}"></a>
+                </li>
+                <li class="item">
+                    <a href="#">
+                        <img src="{{url_for('static', filename='img/index/bank/dt.png', _external=True)}}"></a>
+                </li>
+                <li class="item">
+                    <a href="#">
+                        <img src="{{url_for('static', filename='img/index/bank/hxyh.jpg', _external=True)}}"></a>
+                </li>
+                <li class="item">
+                    <a href="#">
+                        <img src="{{url_for('static', filename='img/index/bank/jnnsh.png', _external=True)}}" ></a>
+                </li>
+                <li class="item">
+                    <a href="#">
+                        <img src="{{url_for('static', filename='img/index/bank/jnyh.jpg', _external=True)}}"></a>
+                </li>
+                <li class="item">
+                    <a href="#">
+                        <img src="{{url_for('static', filename='img/index/bank/jy.jpg', _external=True)}}" ></a>
+                </li>
+                <li class="item">
+                    <a href="#">
+                        <img src="{{url_for('static', filename='img/index/bank/jynsh.jpg', _external=True)}}" ></a>
+                </li>
+                <li class="item">
+                    <a href="#">
+                        <img src="{{url_for('static', filename='img/index/bank/tynsh.png', _external=True)}}" ></a>
+                </li>
+                <li class="item">
+                    <a href="#">
+                        <img src="{{url_for('static', filename='img/index/bank/wxnsh.jpg', _external=True)}}" ></a>
+                </li>
+                <li class="item">
+                    <a href="#">
+                        <img src="{{url_for('static', filename='img/index/bank/xhyh.jpg', _external=True)}}" ></a>
+                </li>
+                <li class="item">
+                    <a href="#">
+                        <img src="{{url_for('static', filename='img/index/bank/xmnsh.png', _external=True)}}" ></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+<!-- End Client Section -->
+
+<!-- Contact Section -->
+<section id="contact" class="contacts-section">
+    <div class="container content-lg">
+        <div class="title-v1">
+            <h2>联系我们 </h2>
+            <p></p>
+        </div>
+
+        <div class="row contacts-in">
+            <div class="col-md-6 md-margin-bottom-40">
+                <ul class="list-unstyled">
+                    <li>
+                        <i class="fa fa-home"></i>
+                        上海市徐汇区桂箐路7号3号楼801室
+                    </li>
+                    <li>
+                        <i class="fa fa-phone"></i>
+                        +86-21-54485390
+                    </li>
+                    <li>
+                        <i class="fa fa-envelope"></i>
+                        <a href="mailto:rcs@qkjr.com.cn">rcs@qkjr.com.cn</a>
+                    </li>
+                    <li>
+                        <i class="fa fa-globe"></i>
+                        <a href="http://www.qkjr.com.cn/">www.qkjr.com.cn</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="col-md-6">
+                <form action="/contact" method="post" id="sky-form3" class="sky-form contact-style">
+                    <fieldset>
+                        <label>姓名</label>
+                        <div class="row">
+                            <div class="col-md-7 margin-bottom-20 col-md-offset-0">
+                                <div>
+                                    <input type="text" name="name" id="name" class="form-control"></div>
+                            </div>
+                        </div>
+
+                        <label>所属机构</label>
+                        <div class="row">
+                            <div class="col-md-7 margin-bottom-20 col-md-offset-0">
+                                <div>
+                                    <input type="text" name="organization" id="organization" class="form-control"></div>
+                            </div>
+                        </div>
+
+                        <label>
+                            电子邮件
+                            <span class="color-red">*</span>
+                        </label>
+                        <div class="row">
+                            <div class="col-md-7 margin-bottom-20 col-md-offset-0">
+                                <div>
+                                    <input type="text" name="email" id="email" class="form-control"></div>
+                            </div>
+                        </div>
+
+                        <label>内容</label>
+                        <div class="row">
+                            <div class="col-md-11 margin-bottom-20 col-md-offset-0">
+                                <div>
+                                    <textarea rows="8" name="message" id="message" class="form-control"></textarea>
+                                </div>
+                            </div>
+                        </div>
+
+                        <p>
+                            <button type="submit" class="btn-u btn-brd btn-brd-hover btn-u-dark">提交</button>
+                        </p>
+                    </fieldset>
+
+                    <div class="message">
+                        <i class="rounded-x fa fa-check"></i>
+                        <p>感谢您的留言，我们会尽快与您联系！</p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="copyright-section">
+        <p>
+            2014-2016 &copy; All Rights Reserved. &nbsp;
+            <a target="_blank" href="http://www.qkjr.com.cn/">乾康（上海）金融信息服务股份有限公司</a>
+        </p>
+        <ul class="social-icons">
+            <li>
+                <a href="#" data-original-title="微信" class="social_weixin rounded-x"></a>
+            </li>
+        </ul>
+        <span class="page-scroll">
+								<a href="#intro">
+									<i class="fa fa-angle-double-up back-to-top"></i>
+								</a>
+							</span>
+    </div>
+</section>
+
+
+{% endblock %}
+
+

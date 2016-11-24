@@ -1,0 +1,142 @@
+#loginModal .modal-dialog{
+    width: 400px;
+    margin: 30px auto;
+}
+
+#noteEditModal .modal-dialog{
+    width: 500px;
+    margin: 30px auto;
+}
+
+#loginModalBody{
+    width: 100%;
+    height: 450px;
+}
+.divisionLine{
+    border-top: 1px solid #e5e5e5;
+    margin: 12px 0px;
+}
+.fixed-logo{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background: #ffffff;
+    width: 100%;
+    box-shadow: 0px -2px 8px #dbdbdb;
+    padding: 10px 10px;
+    box-sizing: border-box;
+}
+
+.fixed-logo div{
+    margin-left: 35px;
+}
+
+.logo-img{
+    width: 30px;
+    float: left;
+    margin-top: 5px;
+    margin-right: 10px;
+}
+.logo-title{
+    color: #333333;
+    font-size: 12px;
+}
+.logo-content{
+    color: #666666;
+    font-size: 10px;
+}
+.guanzhu{
+    color: #ffffff;
+    background: #1094f6;
+    position: absolute;
+    right: 10px;
+    top: 15px;
+    padding: 5px 10px;
+    border-radius: 3px;
+    text-decoration: none;
+    box-sizing: border-box;
+    font-size: 12px;
+}
+
+.weixin{
+    color: #ffffff;
+    background: #3CB033;
+    position: absolute;
+    right: 80px;
+    top: 15px;
+    padding: 5px 10px;
+    border-radius: 3px;
+    text-decoration: none;
+    box-sizing: border-box;
+    font-size: 12px;
+}
+.weixin img{
+    width: 20px;
+    padding-right: 5px
+}
+
+#logo-space{
+    height: 80px;
+}
+
+#radar-search-list a{
+    z-index: 999;
+}
+
+@media screen and (min-device-width: 375px) and (max-device-width: 667px){
+    /* style */
+    .fixed-logo div{
+        margin-left: 55px;
+    }
+
+    .logo-img{
+        width: 50px;
+        float: left;
+    }
+    .logo-title{
+        color: #333333;
+        font-size: 14px;
+        margin-top: 10px;
+    }
+    .logo-content{
+        color: #666666;
+        font-size: 12px;
+        margin-top: 5px;
+    }
+    .guanzhu{
+        color: #ffffff;
+        background: #1094f6;
+        position: absolute;
+        right: 10px;
+        top: 20px;
+        padding: 5px 10px;
+        border-radius: 3px;
+        text-decoration: none;
+        box-sizing: border-box;
+        font-size: 15px;
+        height: 30px;
+    }
+
+    .weixin{
+        color: #ffffff;
+        background: #3CB033;
+        position: absolute;
+        right: 100px;
+        top: 20px;
+        padding: 5px 10px;
+        border-radius: 3px;
+        text-decoration: none;
+        box-sizing: border-box;
+        font-size: 15px;
+        height: 30px;
+        line-height: 20px;
+    }
+
+    .weixin img{
+        width: 25px;
+        padding-right: 5px;
+        vertical-align: bottom;
+        margin-bottom: 2px;
+    }
+
+}

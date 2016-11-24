@@ -1,0 +1,147 @@
+{% extends "base.html" %}
+
+{% block title %}查询{% endblock %}
+
+
+{% block styles %}
+{{super()}}　
+<!--<link href="{{url_for('static', filename='css/one.style.css', _external=True)}}" rel="stylesheet" type="text/css"/>-->
+<!--<link href="{{url_for('static', filename='css/page_log_reg_v2.css', _external=True)}}" rel="stylesheet" type="text/css"/>-->
+<!--<link href="{{url_for('static', filename='css/font-awesome.min.css', _external=True)}}" rel="stylesheet" type="text/css"/>-->
+{% endblock %}
+
+
+{% block scripts %}
+{{super()}}
+<script src="{{url_for('static', filename='js/institution.js', _external=True)}}"></script>
+
+{% endblock %}
+
+{% block content %}
+<form action="" id="bigData">
+    <div class="row">
+        <div class="col-md-6 col-sm-6">
+            <div class="form-group customerDiv">
+                <div class="showName"></div>
+                <div class="input-group hideName" onkeydown="keyOut(event,'customerBtn')">
+                    <input autofocus="auto" name="name" type="text" class="form-control customer" placeholder="请输入客户姓名">
+                    <span class="input-group-btn">
+                            <button id="customerBtn" class="btn green customerBtn" type="button"><i class="fa fa-search"></i></button>
+                        </span>
+                </div>
+                <label class="messageName"></label>
+            </div>
+            <div class="form-group idNumberDiv" style="display: none" >
+                <div class="showIdnumber"></div>
+                <div class="input-group hideIdnumber" onkeydown="keyOut(event,'idNumberBtn')">
+                    <input name="idCard" type="text" class="form-control idNumber" placeholder="请输入客户身份证号">
+                    <span class="input-group-btn">
+                            <button id="idNumberBtn" class="btn green idNumberBtn" type="button"><i class="fa fa-search"></i></button>
+                        </span>
+                </div>
+                <label class="messageIdnumber"></label>
+            </div>
+            <div class="form-group telDiv" style="display: none">
+                <div class="showTel"></div>
+                <div class="input-group hideTel" onkeydown="keyOut(event,'telBtn')">
+                    <input name="phone" type="text" class="form-control tel" placeholder="想查询更多信息，请输入客户电话号码！">
+                    <span class="input-group-btn">
+                            <button  id="telBtn" class="btn green telBtn" type="button"><i class="fa fa-search"></i></button>
+                        </span>
+                </div>
+                <label class="messageTel"></label>
+            </div>
+        </div>
+    </div>
+</form>
+<div class="row">
+    <div class="col-md-12 showError" style="text-align: center">
+
+    </div>
+    <div class="col-md-12 showImg" style="text-align: center;padding-top:100px">
+
+    </div>
+</div>
+<div class="row showData" style="display: none">
+    <div class="col-md-10">
+        <h4>黑名单查询</h4>
+        <div class="well">
+            <address>
+                <strong>本机构命中次数</strong>
+                <br/>
+                <br/>
+                <span class="num1"></span>
+            </address>
+            <address>
+                <strong>跨机构命中次数</strong>
+                <br/>
+                <br/>
+                <span class="num2"></span>
+            </address>
+        </div>
+        <h4>反欺诈调查</h4>
+        <div class="well">
+            <table class="table table-bordered table-hover" id="hittedRules">
+                <tr>
+                    <th>规则命中条件说明</th>
+                    <th>规则的命中方式</th>
+                    <th>规则的威胁等级</th>
+                </tr>
+            </table>
+            <h4>结果</h4>
+            <table class="table table-bordered table-hover" id="riskLevel">
+
+            </table>
+            <br>
+            <h4>规则范围</h4>
+            <table class="table table-bordered table-hover" id="reasonCode">
+
+            </table>
+            <div>
+                <p>备注：CRS - 跨机构申请类规则&nbsp;&nbsp;
+                    GRP - 团伙欺诈类规则&nbsp;&nbsp;
+                    HIS - 本机构历史申请类规则&nbsp;&nbsp;
+                    BLK - 黑名单类规则&nbsp;&nbsp;
+                    LGC - 当前申请自身逻辑判断类规则
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row dataShowPY" style="display: none">
+    <div class="col-md-10">
+        <h4>报告信息</h4>
+        <div class="well">
+            <div class="table-responsive">
+                <table class="table table-bordered table-hover" id="cisReports">
+                </table>
+            </div>
+            <br>
+            <h4>个人身份认证信息</h4>
+            <br>
+            <div class="table-responsive">
+                <table class="table table-bordered table-hover" id="policeCheck2Info">
+                </table>
+            </div>
+            <br>
+            <h4>个人风险统计信息</h4>
+            <br>
+            <div class="table-responsive">
+                <table class="table table-bordered table-hover" id="personRiskStatInfo">
+                </table>
+            </div>
+            <br>
+            <h4>子报告信息</h4>
+            <br>
+            <div class="table-responsive">
+                <table class="table table-bordered table-hover" id="cisReport">
+                </table>
+            </div>
+            <br>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+
