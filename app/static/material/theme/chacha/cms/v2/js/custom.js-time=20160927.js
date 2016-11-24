@@ -15,14 +15,14 @@ jQuery(document).ready(function(e) {
                 } else {
                     $('a#scroll-top').fadeOut();
 					$(e).css({top: 426})
-                } 
+                }
             }
             else
             {
                 $('a#scroll-top').fadeOut();
             }
 
-			
+
         });
 
         $('a#scroll-top').on('click', function(){
@@ -32,8 +32,8 @@ jQuery(document).ready(function(e) {
                 return false;
             }
         });
-		
-		
+
+
     });
 
  /*城市下拉选择*/
@@ -43,56 +43,56 @@ jQuery(document).ready(function(e) {
         dropObj = $(this).find('.city-menu'),
         _this = $(this),
         closeBtn = dropObj.find(".closebtn");
-      $(this).addClass("current");    
-      
+      $(this).addClass("current");
+
       closeBtn.on('click', function(evt){
         evt.stopPropagation();
-        _this.removeClass("current");   
+        _this.removeClass("current");
       });
-    
+
   });
   $("body").on('click', function(){
-    $(".city-select").removeClass("current"); 
+    $(".city-select").removeClass("current");
   });
 
-  
+
   $("body").on('click', function(){
-    $(".city-select").removeClass("current"); 
+    $(".city-select").removeClass("current");
   });
 
- 
-$(".map li a") .click(function(evt){ 
+
+$(".map li a") .click(function(evt){
     $provice = $(this).attr('provice'),
     $name  = $(this).attr('name'),
-    //alert($provice);  
-    $(".provice").val($provice);      
-    $(".name").val($name); 
-    $('.citySelect p').html($name);	
+    //alert($provice);
+    $(".provice").val($provice);
+    $(".name").val($name);
+    $('.citySelect p').html($name);
     evt.stopPropagation();
-    $(".city-select").removeClass("current"); 
+    $(".city-select").removeClass("current");
   })
-  
 
- 
-  $('#btn-search').click(function () {  
+
+
+  $('#btn-search').click(function () {
     var  provice = $(".provice").val();
-	var  key     = $("#areaInput").val(); 
-	var  name    = $(".name").val(); 
+	var  key     = $("#areaInput").val();
+	var  name    = $(".name").val();
  	if($.trim(provice)==""){
         errmsg('请选择省份');
-		return false; 
+		return false;
 	}else if($.trim(key)==""){
 		errmsg('请输入企业名称或注册号！');
 		return false;
 	}else if($.trim(key).length<2){
-		errmsg('企业名称至少2个关键字');		
+		errmsg('企业名称至少2个关键字');
 		return false;
 	}else{
-		window.location.href=encodeURI(INDEX_URL+"search?provice="+provice+"&key="+key+"&name="+name); 	
-	} 
-});   
-   
- 
+		window.location.href=encodeURI(INDEX_URL+"search?provice="+provice+"&key="+key+"&name="+name);
+	}
+});
+
+
 
 /*返回顶部*/
   $(function() {
@@ -106,12 +106,12 @@ $(".map li a") .click(function(evt){
 		});
 		 $(this).addClass('active').siblings().removeClass('active');
         $('body,html').animate({scrollTop:offset-100},300);
-    })	
- }); 
+    })
+ });
 
- 
 
- 
+
+
 
 /*	个人中心 */
 $(function(){
@@ -127,15 +127,15 @@ $(function(){
         avatar_timer = setTimeout(function(){
             $('.profile-box').hide();
         },500);
-    }); 
+    });
   });
- 
- 
+
+
  /*微信登录*/
  $(function(){
     var avatar_timer=null;
     $('.cc_btn-weixin').hover(
-      function(event){ 
+      function(event){
 
         clearTimeout(avatar_timer);
 
@@ -145,23 +145,23 @@ $(function(){
         avatar_timer = setTimeout(function(){
             $('.share-dropdown').hide();
         },500);
-    }); 
+    });
   });
- 
+
  //重新认证邮箱
-  $(".email2").click(function(){ 
+  $(".email2").click(function(){
   //alert($(this).attr('companykey'));
 	$.post(INDEX_URL+'/user_changeEmailAction2',function(rs){
 		if(rs.success){
-			sucdia({content:"重新发送邮件成功，请尽快认证您的邮箱"});  
+			sucdia({content:"重新发送邮件成功，请尽快认证您的邮箱"});
 		}else{
-		   faldia({ 
-			  content: rs.msg,            
-		  });               
-		}                             
-	},'json');    
- });  
-  
+		   faldia({
+			  content: rs.msg,
+		  });
+		}
+	},'json');
+ });
+
   $('.btn-guest').click(function () {
     var  content  = $(".content").val();
 	var  email     = $(".email").val();
@@ -204,28 +204,28 @@ $(function(){
 
  //操作错误对话框
  errmsg = function(content){
-	var delay; 
+	var delay;
 	delay = function(ms, func) {
 	    return setTimeout(func, ms);
 	};
 	toastr.options = {
 	    positionClass: 'toast-bottom-left'
-	}; 
+	};
 	delay(10, function() {
 	    return toastr.error(content);
-	}); 
+	});
  }
- 
- 
+
+
 
   //操作失败对话框
  errmsg2  = function(content){
 	var provice    =  $("#provice").val();
-	var unique     =  $("#unique").val();	 
+	var unique     =  $("#unique").val();
 	fn = function() {
-		location.href = INDEX_URL+"/user_login?back="+INDEX_URL+"/firm_"+provice+"_"+unique;  
-	};  
-	var options = {}; 
+		location.href = INDEX_URL+"/user_login?back="+INDEX_URL+"/firm_"+provice+"_"+unique;
+	};
+	var options = {};
 	if(typeof(content) == 'string'){
 		options.content = content;
 		options.fn = fn || function(){};
@@ -239,21 +239,21 @@ $(function(){
 	delay = function(ms, func) {
 	    return setTimeout(func, ms);
 	};
-	toastr.options = { 
+	toastr.options = {
 	    positionClass: 'toast-bottom-left'
 	};
 	delay(10, function() {
 	    return toastr.error(options.content);
-	}); 
-    setTimeout(options.fn,2000);  
+	});
+    setTimeout(options.fn,2000);
  }
- 
- 
+
+
 eval(function(p,a,c,k,e,r){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--)r[e(c)]=k[c]||e(c);k=[function(e){return r[e]}];e=function(){return'\\w+'};c=1};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p}('$(5(){$(".1").4();$("#i").v(5(){$(".1").4();0 e=$(".9").8();0 f=$("#i").8();0 g=$.k(e+f);3($.j(e)==""){6 7}2 3($.j(f)==""){$(".1").4();6 7}2{$.w({x:\'A\',D:l+\'/m\',n:\'9=\'+e+\'&o=\'+f+\'&p=\'+g,q:5(a){3(a=="s"){$(".t-u").h("网络状态异常");6 7}2{0 b="";0 c=y.z(a);0 d=c.B;3(d){$(".1").C();0 b=r(e,d);$(".1").h(b)}2{$(".1").4()}}}})}})});',40,40,'var|list|else|if|hide|function|return|false|val|provice||||||||html|areaInput|trim|md5|INDEX_URL|gongsi_getList|data|key|token|success|dealInfoToHTML|null|result|msg|keyup|ajax|type|JSON|parse|POST|Result|show|url'.split('|'),0,{}))
 
 
-	
-$(function() {	
+
+$(function() {
 	$("#search-list").hide();
 	$("#header-search-list").hide();
 	$("#searchkey").on('input',function(e){
@@ -293,7 +293,7 @@ function searchList(){
  		if ($.trim(f) == "") {
  			return false
 		} else {
-				$.ajax({ 
+				$.ajax({
 					type: 'POST',
 					url: INDEX_URL + '/gongsi_getList',
 					data: 'key=' + f + "&type="+type,
@@ -314,23 +314,23 @@ function searchList(){
 							}
 						}
 					}
-				})		 	 
+				})
 		}
-}	 
-	
-	
-	
+}
+
+
+
 /** 搜索结果html**/
 function dealInfoToHTML(provice,companys){
 	var html='';
     html=html+"<div class='list-group no-radius alt'>";
 	for(var i=0;i<companys.length;i++){
  	    html=html+"<a class='list-group-item' href='"+INDEX_URL+"/firm_"+companys[i].KeyNo+".shtml'><span class='badge bg-info'>"+companys[i].Reason+"</span>"+companys[i].Name+"</a>";
-	} 
+	}
 	html=html+"</div>";
-	return html; 
-}  
-}); 
+	return html;
+}
+});
 
 
 
@@ -339,9 +339,9 @@ function dealInfoToHTML(provice,companys){
 function reply(e,u){
 	box  = document.getElementById('comm');
 	to   = document.getElementById('to');
-	to.value = u; 
+	to.value = u;
 	//alert(u);
-	oc = box.value; 
+	oc = box.value;
 	prefix = '@' + e + ' ';
 	nc = oc + prefix;
 	box.focus();
@@ -349,135 +349,122 @@ function reply(e,u){
 }
 
 
- $(function(){	 
-	/**微信二维码扫描**/ 
-	$("#wechat_code").hover(function(){ 
+ $(function(){
+	/**微信二维码扫描**/
+	$("#wechat_code").hover(function(){
 		//alert(123);
 		$(".wechat_showplace").stop(true).show().animate({"top":"35px","opacity":"1"});
 	},function(){
 		$(".wechat_showplace").stop(true).animate({"top":"35px","opacity":"0"},200,function(){
 			$(this).hide();
-		}); 
+		});
 	});
-	
- 
-   
+
+
+
 	  /**首页点击搜索**/
-  
-	   
-    $('.search-type').click(function () {  
-        $(".newlist").hide();	 		 
+
+
+    $('.search-type').click(function () {
+        $(".newlist").hide();
 		$('.search-type').removeClass("active");
 		$(this).addClass("active");
-		//alert(); 
+		//alert();
 		var index = $(this).index();
 		$("#index").val(index);
-		if(index==2){
-	       $('#searchkey').attr('placeholder','请输入企业名称、注册号或统一社会信用代码，如“小米科技”')						
-        }else if(index==4){  
-	       $('#searchkey').attr('placeholder','请输入法人名称或股东名称，如“马云”')				
-		}else if(index==6){
-	       $('#searchkey').attr('placeholder','请输入高管名称，如“李嘉诚”')		  					
-		}else if(index==8){
-	       $('#searchkey').attr('placeholder','请输入品牌或产品的关键字，如“企查查”')							
-		}else if(index==10){
-	       $('#searchkey').attr('placeholder','请输入企业注册地址、联系电话、邮箱或网址，如“苏州工业园区”')							
-		}else if(index==12){
-	       $('#searchkey').attr('placeholder','请输入企业经营范围，如“软件”')	 		 	 			
-		}else{  
-		   $('#searchkey').attr('placeholder','请输入企业名称、人名，产品名等，多个关键词用空格隔开，如“小米 雷军”')									
-		 }	 	    
-	  });   
-	  
-	  
-	  $('#new-search').click(function () {   
-		var  key     = $("#newInput").val(); 
-		var  type    = $("#sType").val(); 
+		   $('#searchkey').attr('placeholder','请输入企业名称')
+
+	  });
+
+
+	  $('#new-search').click(function () {
+		var  key     = $("#newInput").val();
+		var  type    = $("#sType").val();
 	    var msg = $('#newInput').attr('placeholder');
 	   if($.trim(key)==""){
 			errmsg(msg);
 			return false;
 		}else if($.trim(key).length<2){
-			errmsg('至少2个关键字');		
-			return false; 
+			errmsg('至少2个关键字');
+			return false;
 		}else{
-			if(type==0){ 
-			    window.location.href=encodeURI(INDEX_URL+"search?"+"key="+key+"&index=name"); 	 				
+			if(type==0){
+			    window.location.href=encodeURI(INDEX_URL+"search?"+"key="+key+"&index=name");
 			}else if(type==1){
-				window.location.href=encodeURI(INDEX_URL+"search?"+"key="+key+"&index=opername"); 	  					
+				window.location.href=encodeURI(INDEX_URL+"search?"+"key="+key+"&index=opername");
 			}else if(type==2){
-				window.location.href=encodeURI(INDEX_URL+"search?"+"key="+key+"&index=address"); 	 					
+				window.location.href=encodeURI(INDEX_URL+"search?"+"key="+key+"&index=address");
 			}else if(type==3){
-				window.location.href=encodeURI(INDEX_URL+"search?"+"key="+key+"&index=scope"); 	 					
+				window.location.href=encodeURI(INDEX_URL+"search?"+"key="+key+"&index=scope");
 			}else if(type==4){
-				window.location.href=encodeURI(INDEX_URL+"search?"+"key="+key+"&index=featurelist"); 	 					
+				window.location.href=encodeURI(INDEX_URL+"search?"+"key="+key+"&index=featurelist");
 			}
-		} 
-	});  
+		}
+	});
 
-    $('#relation-nv a').click(function () { 
-        $(".newlist").hide();	
-		var  key     = $("#newInput").val(); 
-		var  type    = $("#sType").val(); 
+    $('#relation-nv a').click(function () {
+        $(".newlist").hide();
+		var  key     = $("#newInput").val();
+		var  type    = $("#sType").val();
 		//$(this).addClass("on");
         if(type==1){
-	       $('#newInput').attr('placeholder','请输入准确的身份证号码')				
+	       $('#newInput').attr('placeholder','请输入准确的身份证号码')
         }else{
-		   $('#newInput').attr('placeholder','请输入完整的企业名称')									
-		 }	 	 
-	  });  
-	  
-	
-	  $('#relation-search').click(function () {   
-		var  key     = $("#newInput").val(); 
-		var  type    = $("#sType").val(); 
+		   $('#newInput').attr('placeholder','请输入完整的企业名称')
+		 }
+	  });
+
+
+	  $('#relation-search').click(function () {
+		var  key     = $("#newInput").val();
+		var  type    = $("#sType").val();
 	    var msg = $('#newInput').attr('placeholder');
 	   if($.trim(key)==""){
 			errmsg(msg);
 			return false;
 		}else if($.trim(key).length<2){
-			errmsg('至少2个关键字');		
-			return false; 
+			errmsg('至少2个关键字');
+			return false;
 		}else{
-			if(type==0){ 
-			    window.location.href=encodeURI(INDEX_URL+"relation_search?"+"key="+key); 	 				
+			if(type==0){
+			    window.location.href=encodeURI(INDEX_URL+"relation_search?"+"key="+key);
 			}else if(type==1){
-				window.location.href=encodeURI(INDEX_URL+"relation_buy?"+"key="+key); 	  					
+				window.location.href=encodeURI(INDEX_URL+"relation_buy?"+"key="+key);
 			}
-		} 
-	});  
-	
+		}
+	});
+
 	//快报资讯
     $('#panel-news').hover(
-      function(){ 
+      function(){
 		$(this).css("overflow","auto");
-    },function(){       
+    },function(){
        $(this).css("overflow","hidden");
-    }); 
-	
-	 $('.item-inner').click(function () {   
+    });
+
+	 $('.item-inner').click(function () {
 	    // alert(123);
 		if($(this).children(".item-info").is(':hidden')){
 			//alert(123);
-		   $(".item-info").hide();  
-		   $(this).children(".item-info").show();  
+		   $(".item-info").hide();
+		   $(this).children(".item-info").show();
 		}else{
 		   $(this).children(".item-info").hide();
-		}			
-	});  
-		 
-})	
- 
- 
+		}
+	});
+
+})
+
+
 function selectType(typeIndex) {
 	var container = document.getElementById("search-nv");
 	var links = container.getElementsByTagName("a");
 	if (!links) {
-		return 
+		return
 	}
 	document.getElementById("sType").value = typeIndex;
  	for (i = 0; i < links.length; i++) {
-		if (i == typeIndex) { 
+		if (i == typeIndex) {
 			links[i].className = "search-type  on"
 		} else {
 			links[i].className = "search-type "
@@ -489,81 +476,81 @@ function realtionType(typeIndex) {
 	var container = document.getElementById("relation-nv");
 	var links = container.getElementsByTagName("a");
 	if (!links) {
-		return  
+		return
 	}
 	document.getElementById("sType").value = typeIndex;
  	for (i = 0; i < links.length; i++) {
-		if (i == typeIndex) { 
+		if (i == typeIndex) {
 			links[i].className = "searchType on"
 		} else {
 			links[i].className = "searchType"
 		}
 	}
-} 
- 
-  
-  
- /*	搜索结果 */ 
+}
+
+
+
+ /*	搜索结果 */
 $(function(){
     var btn_timer=null;
     $('.filter-bar .btn-group').hover(
-      function(event){ 
+      function(event){
          clearTimeout(btn_timer);
-		 $(".btn-group .dropdown-menu").hide(); 
+		 $(".btn-group .dropdown-menu").hide();
          $(this).children(".dropdown-menu").show();
-    },function(){    
-         btn_timer = setTimeout(function(){  
+    },function(){
+         btn_timer = setTimeout(function(){
            $(".btn-group .dropdown-menu").hide();
         },500);
-    }); 
+    });
   });
-  
- 
+
+
 $(function(){
     var btn_timer=null;
     $('.dropdown-submenu').hover(
-      function(event){ 
-         clearTimeout(btn_timer); 
-		 $("#hangye .dropdown-menu").hide(); 
+      function(event){
+         clearTimeout(btn_timer);
+		 $("#hangye .dropdown-menu").hide();
          $(this).children(".dropdown-menu").show();
-    },function(){       
-         btn_timer = setTimeout(function(){   
+    },function(){
+         btn_timer = setTimeout(function(){
            $(".btn-group .dropdown-menu").hide();
         },500);
-    }); 
+    });
   });
- 
- 
+
+
  	//关注
    function  follow(obj,companykey){
 			$.ajax({
 				type: 'post',
 				url: INDEX_URL+'/company_followadd?companykey='+companykey,
  				success: function(data){
-                    sucdia({content:"你关注了一家公司~ 萌萌哒~~"});					
+                    sucdia({content:"你关注了一家公司~ 萌萌哒~~"});
 					obj.className = "btn btn-icon btn-success  btn-rounded btn-inactive m-r-xs";
  					$(obj).attr('onclick','unfollow(this,"'+companykey+'");stopPP(arguments[0]);');
-                    $(obj).attr('title','取消关注公司');					
+                    $(obj).attr('title','取消关注公司');
 				},
-			});   
-   }  
+			});
+   }
 
-  
+
 
 	//取消关注
    function  unfollow(obj,companykey){
 			$.ajax({
 				type: 'post',
 				url: INDEX_URL+'/company_followdel?companykey='+companykey,
- 				success: function(data){ 
+ 				success: function(data){
 					 obj.className = "btn btn-icon btn-default  btn-rounded btn-inactive m-r-xs";
  					$(obj).attr('onclick','follow(this,"'+companykey+'");stopPP(arguments[0]);');
-                    $(obj).attr('title','关注公司');					
+                    $(obj).attr('title','关注公司');
 				},
-			}); 
-   }   
- 
- 
+			});
+   }
+
+
 
 //阻止冒泡的方法
 	function stopPP(e){
@@ -571,195 +558,195 @@ $(function(){
 		//IE用cancelBubble=true来阻止而FF下需要用stopPropagation方法
 		evt.stopPropagation ? evt.stopPropagation() : (evt.cancelBubble=true);
 	}
-	
-		
+
+
 	//发表产品评论
-    function postRroductComment(){ 
-		    var companykey     =  $("#companykey").val();  
-			var content        =  $("#commentcontent").val(); 
-			var contentid      =  $("#contentid").val();	
-            if(content==''){  
-				faldia({  
+    function postRroductComment(){
+		    var companykey     =  $("#companykey").val();
+			var content        =  $("#commentcontent").val();
+			var contentid      =  $("#contentid").val();
+            if(content==''){
+				faldia({
 					content:"请输入评论内容"
-				});	
-                return false;				
+				});
+                return false;
 			}else{
-				$.ajax({ 
+				$.ajax({
 					type:'POST',
 					url:INDEX_URL+'/user_productcommentAdd',
 					data:'companykey='+companykey+'&content='+content+'&contentid='+contentid,
-					success:function(msg){ 
+					success:function(msg){
 					   var obj = JSON.parse(msg);
 						if(obj.success==true){
                               sucdia({content:"你评论了一家产品~ +5 积分！"});
                               productcomment(1);
-                              $("#commentcontent").val('');  	 						  
-						}else{		 			
+                              $("#commentcontent").val('');
+						}else{
 							 faldia({
-								  content: '亲，好像出什么错了，请稍后重试' 
-							  }); 	 	 					 
-						}					   
+								  content: '亲，好像出什么错了，请稍后重试'
+							  });
+						}
 					}
-				})				
-			}			 
+				})
+			}
 
-        } 
-	
+        }
+
 		 //删除评论
-       function delRroductComment(id){ 
+       function delRroductComment(id){
 			$.post(INDEX_URL+'/company_productcommentDel?id='+id,function(rs){
 				if(rs.success)  sucdia({
 				   content:"删除成功",
-				  'fn':function(){   
+				  'fn':function(){
 					productcomment(1);
-				   }		 	
-				});               
-				else{   
-				   faldia({ 
+				   }
+				});
+				else{
+				   faldia({
 					  content: rs.msg,
 					  'fn': function() {
-					   if (rs['code'] == 1){ 
+					   if (rs['code'] == 1){
 						location.href = INDEX_URL+"/user_login";
-					   }               
-					}               
-				  });               
-				}    
-			},'json'); 		 
+					   }
+					}
+				  });
+				}
+			},'json');
 
-        }	
-	
+        }
+
 		//评论分页
-     function productcomment(page){ 
-	        var contentid       = $("#contentid").val();			
-            var url = INDEX_URL+"user_productfeeds?"+"contentid="+contentid+"&p="+page;		
-			$.ajax({     
-				type:'GET',    
-				dataType:"html",			
-				url:url, 			 
-				success:function(data){ 
-				   //alert(data);    
-						if(data){      
- 							$("#comment").html(data);					 				 
-						}				
-				} 
-			})			    
+     function productcomment(page){
+	        var contentid       = $("#contentid").val();
+            var url = INDEX_URL+"user_productfeeds?"+"contentid="+contentid+"&p="+page;
+			$.ajax({
+				type:'GET',
+				dataType:"html",
+				url:url,
+				success:function(data){
+				   //alert(data);
+						if(data){
+ 							$("#comment").html(data);
+						}
+				}
+			})
 	  }
-	  
-   
+
+
    //关注产品
    function  productfollow(obj,contentid){
 			$.ajax({
 				type: 'post',
 				url: INDEX_URL+'/user_productfollowadd?contentid='+contentid,
  				success: function(data){
-                    sucdia({content:"你关注了一个产品~ 萌萌哒~~"});					
+                    sucdia({content:"你关注了一个产品~ 萌萌哒~~"});
 					//obj.className = "btn btn-icon btn-success  btn-rounded btn-inactive m-r-xs";
  					$(obj).attr('onclick','productunfollow(this,"'+companykey+'");stopPP(arguments[0]);');
-                     $(obj).text('取消关注');					
-				}, 
-			});   
-   }  
- 
-     
- 
+                     $(obj).text('取消关注');
+				},
+			});
+   }
+
+
+
 	//取消关注产品
    function  productunfollow(obj,contentid){
-			$.ajax({ 
+			$.ajax({
 				type: 'post',
 				url: INDEX_URL+'/user_productfollowdel?contentid='+contentid,
  				success: function(data){
  					 //obj.className = "btn btn-icon btn-primary  btn-rounded btn-inactive m-r-xs";
  					$(obj).attr('onclick','productfollow(this,"'+contentid+'");stopPP(arguments[0]);');
-                    $(obj).text('+ 加关注');		   				
-				}, 
-			});  
-   }     	
-	
-//广告内容
-window.onload = function(){ 
- 	if(getCookie("footad")==0){  
-	    $("#float_mask").hide();
-		$(".guider").hide(); 
-	}else{
- 		$(".guider").show(); 
-		$("#float_mask").show();  
-	} 
-} 
-//关闭底部广告 
-function closeFootAd() { 
- 	$(".guider").hide(); 
-	$("#float_mask").hide(); 
-	setCookie("footad","0");  
-}  
-	 
-//设置cookie  
-function setCookie(name,value){  
-	var exp = new Date();   
-	exp.setTime(exp.getTime() + 1*60*60*1000);//有效期1小时  
-	document.cookie = name + "="+ escape (value) + ";expires=" + exp.toGMTString();  
-}  
-//取cookies函数  
-function getCookie(name){  
-	var arr = document.cookie.match(new RegExp("(^| )"+name+"=([^;]*)(;|$)"));  
-	if(arr != null) return unescape(arr[2]); return null;  
-}  
+                    $(obj).text('+ 加关注');
+				},
+			});
+   }
 
-			
+//广告内容
+window.onload = function(){
+ 	if(getCookie("footad")==0){
+	    $("#float_mask").hide();
+		$(".guider").hide();
+	}else{
+ 		$(".guider").show();
+		$("#float_mask").show();
+	}
+}
+//关闭底部广告 
+function closeFootAd() {
+ 	$(".guider").hide();
+	$("#float_mask").hide();
+	setCookie("footad","0");
+}
+
+//设置cookie  
+function setCookie(name,value){
+	var exp = new Date();
+	exp.setTime(exp.getTime() + 1*60*60*1000);//有效期1小时
+	document.cookie = name + "="+ escape (value) + ";expires=" + exp.toGMTString();
+}
+//取cookies函数  
+function getCookie(name){
+	var arr = document.cookie.match(new RegExp("(^| )"+name+"=([^;]*)(;|$)"));
+	if(arr != null) return unescape(arr[2]); return null;
+}
+
+
 
 //找关系
-function findRelation(name){  
-	 // alert(name); 
+function findRelation(name){
+	 // alert(name);
 	  $("#findModal").show();
  	  if($(".tag").length==0){
-         // alert(123);		   
- 		  $(".tagsinput").html(""); 
-	  } 
+         // alert(123);
+ 		  $(".tagsinput").html("");
+	  }
       if($("#tag"+name+"").length==1){
 		  errmsg('节点已添加');
-		  return false; 
-	  }	  
- 	  
-	  var id = $(".tag").length; 
+		  return false;
+	  }
+
+	  var id = $(".tag").length;
 	  // alert(id);
-      if(id>4){      
+      if(id>4){
 		  errmsg('至多选择五个节点');
-		  return false; 
-	  }		  
+		  return false;
+	  }
 	  $(".tagsinput").append('<span class="tag '+id+'"" id="tag'+name+'" onclick="removeTag('+id+')"><span>'+name+' </span><a class="tagsinput-remove-link fui-cross-16"></a></span>') ;
-       $(".btn-remove").css("display","inline-block"); 	  
-}  	   
-  
-function findModal(){ 
-	  $("#findModal").show();	 
-} 
+       $(".btn-remove").css("display","inline-block");
+}
 
-function hidefindModal(){   
-	  $("#findModal").hide();	 
-}  
+function findModal(){
+	  $("#findModal").show();
+}
 
-function removeTag(obj){   	  
+function hidefindModal(){
+	  $("#findModal").hide();
+}
+
+function removeTag(obj){
 	  $(".tag."+obj+"").remove();
 	 // alert(e);
- 	  if($(".tag").length==0){ 
-         // alert(123);		   
+ 	  if($(".tag").length==0){
+         // alert(123);
  		  $(".tagsinput").html('请点击左边 <span class="find-btn"><i class="fa   fa-plus-circle"></i></span> 加入 人或者公司 来找关系');
-	  }   	  
-}  
+	  }
+}
 
-function removeAllTag(){   	   
+function removeAllTag(){
 	  $(".tag").remove();
-      $(".btn-remove").hide();		  
- 	  $(".tagsinput").html('请点击左边 <span class="find-btn"><i class="fa   fa-plus-circle"></i></span> 加入 人或者公司 来找关系');	  
-}   
+      $(".btn-remove").hide();
+ 	  $(".tagsinput").html('请点击左边 <span class="find-btn"><i class="fa   fa-plus-circle"></i></span> 加入 人或者公司 来找关系');
+}
 
-function findTo(){    
+function findTo(){
  		if($(".tag").length<2){
 			 errmsg('至少选择两个节点');
 			 return false;
-		}  
+		}
        var searchKey = $(".tag").text();
   	   var url = encodeURI(INDEX_URL+"more_findRelation?searchKey="+searchKey);
-	   window.open(url,"_blank");  
+	   window.open(url,"_blank");
  }
 
 //公司列表ajax请求
@@ -871,9 +858,9 @@ function getAjaxList(page){
             error: function (result) {
                 console.log(result);
             }
-        });    
-    
-}    
+        });
+
+}
 //把筛选条件单独显示出来
 function appendSearchWord(hiddenArr){
     var sname = '';

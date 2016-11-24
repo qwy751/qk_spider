@@ -12,18 +12,18 @@ def index():
     if current_user.is_authenticated:
         return render_template('index.html')
 
-    return render_template('welcome.html')
+    return render_template('enterprise/index.html')
 
 
 
 @main.route('/search')
 def search():
-    return render_template('func/search.html')
+    return render_template('enterprise/search.html')
 
 
 @main.route('/result')
 def result():
-    return render_template('func/result.html')
+    return render_template('enterprise/result.html')
 
 
 @main.route('/user/<username>')

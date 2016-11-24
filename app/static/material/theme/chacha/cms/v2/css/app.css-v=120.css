@@ -615,7 +615,7 @@ html {
         margin-bottom: 0;
         padding: 0;
         position: relative;
-        z-index: 1000; 
+        z-index: 1000;
 		border-bottom: 1px solid rgba(0,0,0,.08);
 		-webkit-box-shadow: 0 1px 5px rgba(0,0,0,.01);
 		box-shadow: 0 1px 5px rgba(0,0,0,.01);
@@ -3639,13 +3639,13 @@ html {
         z-index:0;
     }
     #search{
-       background: #007EDF  url(../images/banner.jpg)/*tpa=http://www.qichacha.com/material/theme/chacha/cms/v2/images/banner.jpg*/ no-repeat bottom;
+
     }
     #search  .intro {
-        padding:100px 0 100px;
+        padding: 0 0;
+        margin: 200px 0 230px;
         position: relative;
-        z-index:10;
-        background-color: rgba(18, 109, 167, 0.75);
+        z-index: 10;
     }
 
     #search .input-lg{
@@ -3658,7 +3658,7 @@ html {
         font-size: 16px;
         font-weight: normal;
         width: 678px;
-        margin: 0 auto; 
+        margin: 0 auto;
     }
     .search-nav li {
         list-style: none;
@@ -3749,7 +3749,7 @@ html {
         /* color:#fff;  */
     }
     .sidebar-new-list li:hover a {
-        /*    color:#177bbb;  
+        /*    color:#177bbb;
  */  }
 
     .area{
@@ -3907,14 +3907,14 @@ html {
     .time-list:last-child{
         border-bottom:0;
     }
- 
+
     #company-nav {
         border:none;
         margin-top: 20px;
      }
     #company-nav  li a{
 /*        border-right:1px solid #ededed;
-*/    
+*/
         padding-top:15px;
         padding-bottom: 15px;
     }
@@ -3937,7 +3937,7 @@ html {
         background-color: #f9f9fa;
         font-weight: 700;
         color: #333;
-        border-top: 2px solid #ababab;        
+        border-top: 2px solid #ababab;
     }
     #company-nav #base_title.current{
       /*  border-left:1px solid #eaeef1;*/
@@ -5253,7 +5253,7 @@ html {
 	#SearchBox{
 		padding: 4px 0 8px;
 	}
- 
+
     .about h4{
         font-size: 14px;
         color: #677D8B;
@@ -5273,10 +5273,10 @@ html {
     height: 40px;
     background-image: url(../images/top-search.png)/*tpa=http://www.qichacha.com/material/theme/chacha/cms/v2/images/top-search.png*/;
     background-repeat: no-repeat;
-    background-position: 50% 50%;  
+    background-position: 50% 50%;
 }
 
- 
+
  .table-search .table-search-list {
     line-height: 24px;
     height: 140px;
@@ -5306,18 +5306,18 @@ html {
 .table-search .tp2 {
     width: 50%;
     text-align: left;
-    line-height: 30px; 
-} 
+    line-height: 30px;
+}
 
 .table-search .tp2 .tp2_tit {
     font-size: 18px;
     font-weight: 700;
 }
- 
+
 .table > tbody > tr > td{
 
    display: table-cell;
-    vertical-align: inherit; 
+    vertical-align: inherit;
 }
 
 
@@ -5325,14 +5325,14 @@ html {
     background: #fff;
 }
 
-.list-success{ 
+.list-success{
     border:1px solid #1aae88;
-    color:#1aae88;   
-} 
-.list-danger{ 
+    color:#1aae88;
+}
+.list-danger{
     border:1px solid #d9534f;
-    color:#d9534f;   
-} 
+    color:#d9534f;
+}
 
 .bg-white .navbar-nav > .active >  a {
     color: #177bbb;
@@ -5340,11 +5340,11 @@ html {
 
 .table-search .tp3 {
     width: 15%;
-} 
+}
 
 .table-search .tp4{
     width: 15%;
-} 
+}
 
 .table-search .tp5{
     width: 10%;
@@ -5376,12 +5376,12 @@ html {
     margin: 0;
 }
 
-#tpsearch input{ 
+#tpsearch input{
    min-width: 290px;
 }
 #company-top .text-primary{
   color: #177bbb;
-}   
+}
 
 .company-action{
     position: absolute;
@@ -5389,10 +5389,10 @@ html {
     right: 10px;
     height: 40px;
 }
-#user-left .active{ 	
+#user-left .active{
     color: #3c4144;
 	border:none;
-    border-left: 2px solid #428bca;	
+    border-left: 2px solid #428bca;
 	background: none;
 }
 
@@ -5406,7 +5406,7 @@ em{
 
 #header-search-list .badge{
     display: none;
-} 
+}
 
 .radar-nav-active{
     color: #3c4144;
@@ -5419,7 +5419,7 @@ em{
 
 #s_weixin .jtico_weixin{
    background:url(../images/s_weixin.png)/*tpa=http://www.qichacha.com/material/theme/chacha/cms/v2/images/s_weixin.png*/ no-repeat bottom;
-} 
+}
 
 
 
@@ -5430,7 +5430,7 @@ em{
 
 #s_qzone  .jtico_qzone{
    background:url(../images/s_qzone.png)/*tpa=http://www.qichacha.com/material/theme/chacha/cms/v2/images/s_qzone.png*/ no-repeat bottom;
-} 
+}
 
 
 #s_qq  .jtico_cqq{
