@@ -1,10 +1,310 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+    </head>
+    <body>
+        {% if data.bbd_licence_mining.results %}
+        <section class="panel b-a base_info">
+            <div class="panel-heading b-b"><span class="font-bold font-15 text-dark"> 采矿许可证</span></div>
+            <div class="panel-body text-sm">
+                <ul class="company-base">
+                    {% for mining in data.bbd_licence_mining.results %}
+                    <li><label>发证机关：</label>{{ mining.issue_org|e }}</li>
+                    <li><label>开采主矿种：</label>{{ mining.mining_mineral|e }}</li>
+                    <li><label>有效期：</label>{{ mining.validdate|e }}</li>
+                    <li><label>有效期自：</label>{{ mining.valid_from|e }}</li>
+                    <li><label>有效期至：</label>{{ mining.validto|e }}</li>
+                    <li><label>许可证：</label>{{ mining.certificate_no|e }}</li>
+                    <li><label>面积（km²）：</label>{{ mining.area|e }}</li>
+                    <li><label>采矿权人：</label>{{ mining.company_name|e }}</li>
+                    <li><label>项目类型：</label>{{ mining.project_type|e }}</li>
+                    <li><label>公告日期：</label>{{ mining.issue_date|e }}</li>
+                    <li><label>矿山名称：</label>{{ mining.mine_name|e }}</li>
+                    <li><label>开采方式：</label>{{ mining.mining_method|e }}</li>
+                    <li><label>设计生产规模：</label>{{ mining.design_scale|e }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </section>
+        {% endif %}
+        {% if data.bbd_licence_pros.results %}
+        <section class="panel b-a base_info">
+            <div class="panel-heading b-b"><span class="font-bold font-15 text-dark"> 探矿许可证</span></div>
+            <div class="panel-body text-sm">
+                <ul class="company-base">
+                    {% for pros in data.bbd_licence_pros.results %}
+                    <li><label>发证机关：</label>{{ pros.issue_org|e }}</li>
+                    <li><label>勘查矿种：</label>{{ pros.explore_mineral|e }}</li>
+                    <li><label>有效期：</label>{{ pros.validdate|e }}</li>
+                    <li><label>有效期自：</label>{{ pros.valid_from|e }}</li>
+                    <li><label>有效期至：</label>{{ pros.validto|e }}</li>
+                    <li><label>许可证：</label>{{ pros.certificate_no|e }}</li>
+                    <li><label>面积（km²）：</label>{{ pros.area|e }}</li>
+                    <li><label>探矿权人：</label>{{ pros.company_name|e }}</li>
+                    <li><label>项目类型：</label>{{ pros.project_type|e }}</li>
+                    <li><label>公告日期：</label>{{ pros.issue_date|e }}</li>
+                    <li><label>项目名称：</label>{{ pros.project_name|e }}</li>
+                    <li><label>地理位置：</label>{{ pros.location|e }}</li>
+                    <li><label>极值坐标：</label>{{ pros.extreme_coordinate|e }}</li>
+                    <li><label>勘察单位：</label>{{ pros.explore_unit|e }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </section>
+        {% endif %}
+        {% if data.bbd_qua_comm_cons.results %}
+        <section class="panel b-a base_info">
+            <div class="panel-heading b-b"><span class="font-bold font-15 text-dark"> 通信建设企业资质</span></div>
+            <div class="panel-body text-sm">
+                <ul class="company-base">
+                    {% for commCons in data.bbd_qua_comm_cons.results %}
+                    <li><label>企业名称： </label>{{ commCons.company_name|e }}</li>
+                    <li><label>资质证书编号： </label>{{ commCons.certificate_no|e }}</li>
+                    <li><label>发证日期： </label>{{ commCons.issue_date|e }}</li>
+                    <li><label>证书有效期：</label>{{ commCons.validdate|e }}</li>
+                    <li><label>发证机关：</label>{{ commCons.issue_org|e }}</li>
+                    <li><label>资质类型：</label>{{ commCons.qualification_type|e }}</li>
+                    <li><label>资质等级：</label>{{ commCons.qualification_level|e }}</li>
+                    <li><label>奖惩信息：</label>{{ commCons.punishment_info|e }}</li>
+                    {% endfor %}
+                </ul>
 
-</body>
+            </div>
+        </section>
+        {% endif %}
+        {% if data.bbd_licence_bui_cons.results %}
+        <section class="panel b-a base_info">
+            <div class="panel-heading b-b"><span class="font-bold font-15 text-dark"> 建筑施工许可证</span></div>
+            <div class="panel-body text-sm">
+                <ul class="company-base">
+                    {% for buiCons in data.bbd_licence_bui_cons.results %}
+                    <li><label>单位名称：</label>{{ buiCons.company_name|e }}</li>
+                    <li><label>所在省：</label>{{ buiCons.location|e }}</li>
+                    <li><label>资质证书编号：</label>{{ buiCons.certificate_no|e }}</li>
+                    <li><label>业务范围：</label>{{ buiCons.business_scope|e }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </section>
+        {% endif %}
+        {% if data.bbd_qyxx_gcjljz.results %}
+        <section class="panel b-a base_info">
+            <div class="panel-heading b-b"><span class="font-bold font-15 text-dark"> 工程监理资质</span></div>
+            <div class="panel-body text-sm">
+                <ul class="company-base">
+                    {% for gcjljz in data.bbd_qyxx_gcjljz.results %}
+                    <li><label>单位名称：</label>{{ gcjljz.company_name|e }}</li>
+                    <li><label>所在省：</label>{{ gcjljz.location|e }}</li>
+                    <li><label>资质证书编号：</label>{{ gcjljz.certificate_no|e }}</li>
+                    <li><label>业务范围：</label>{{ gcjljz.business_scope|e }}</li>
+                    <li><label>发证日期：</label>{{ gcjljz.issue_date|e }}</li>
+                    <li><label>有效期至：</label>{{ gcjljz.validdate|e }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </section>
+        {% endif %}
+        {% if data.bbd_qua_itsys_sup.results %}
+        <section class="panel b-a base_info">
+            <div class="panel-heading b-b"><span class="font-bold font-15 text-dark"> 信息系统工程监理资质</span></div>
+            <div class="panel-body text-sm">
+                <ul class="company-base">
+                    {% for itsysSup in data.bbd_qua_itsys_sup.results %}
+                    <li><label>单位名称：</label>{{ itsysSup.company_name|e }}</li>
+                    <li><label>资质等级：</label>{{ itsysSup.qualification_level|e }}</li>
+                    <li><label>所在省市：</label>{{ itsysSup.location|e }}</li>
+                    <li><label>证书编号：</label>{{ itsysSup.certificate_no|e }}</li>
+                    <li><label>批准（备案）日期：</label>{{ itsysSup.approval_date|e }}</li>
+                    <li><label>首次获证日期：</label>{{ itsysSup.fristissue_date|e }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </section>
+        {% endif %}
+        {% if data.bbd_cert_soft_ent_pro.results %}
+        <section class="panel b-a base_info">
+            <div class="panel-heading b-b"><span class="font-bold font-15 text-dark"> 双软认证</span></div>
+            <div class="panel-body text-sm">
+                <ul class="company-base">
+                    {% for entPro in data.bbd_cert_soft_ent_pro.results %}
+                    <li><label>序号：</label>{{ entPro.frname|e }}</li>
+                    <li><label>证书编号：</label>{{ entPro._id|e }}</li>
+                    <li><label>企业名称：</label>{{ entPro.original_company_name|e }}</li>
+                    <li><label>法定代表人：</label>{{ entPro.company_name|e }}</li>
+                    <li><label>认定日期：</label>{{ entPro.original_frname|e }}</li>
+                    <li><label>原企业名称：</label>{{ entPro.original_product_name|e }}</li>
+                    <li><label>原法定代表人：</label>{{ entPro.product_name|e }}</li>
+                    <li><label>原产品名称：</label>{{ entPro.certificate_num|e }}</li>
+                    <li><label>产品名称（现产品名称）：</label>{{ entPro.regdate|e }}</li>
+                    <li><label>公布年度：</label>{{ entPro.publish_date|e }}</li>
+                    <li><label>登记日期：</label>{{ entPro.issue_date|e }}</li>
+                    <li><label>所在城市：</label>{{ entPro.current_city|e }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </section>
+        {% endif %}
+        {% if data.bbd_licence_ind_pro.results %}
+        <section class="panel b-a base_info">
+            <div class="panel-heading b-b"><span class="font-bold font-15 text-dark"> 工业产品生产许可证</span></div>
+            <div class="panel-body text-sm">
+                <ul class="company-base">
+                    {% for indPro in data.bbd_licence_ind_pro.results %}
+                    <li><label>产品名称：</label>{{ indPro.frname|e }}</li>
+                    <li><label>企业名称：</label>{{ indPro.company_name|e }}</li>
+                    <li><label>发证日期：</label>{{ indPro.issue_date|e }}</li>
+                    <li><label>有效期：</label>{{ indPro.validdate|e }}</li>
+                    <li><label>许可证编号：</label>{{ indPro.certificate_no|e }}</li>
+                    <li><label>地区：</label>{{ indPro.location|e }}</li>
+                    <li><label>附件：</label>{{ indPro.attachment|e }}</li>
+                    <li><label>品种规格：</label>{{ indPro.specification|e }}</li>
+                    <li><label>说明：</label>{{ indPro.instruction|e }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </section>
+        {% endif %}
+        {% if data.bbd_qua_pes_pro.results %}
+        <section class="panel b-a base_info">
+            <div class="panel-heading b-b"><span class="font-bold font-15 text-dark"> 农药生产企业资质</span></div>
+            <div class="panel-body text-sm">
+                <ul class="company-base">
+                    {% for pesPro in data.bbd_qua_pes_pro.results %}
+                    <li><label>企业名称：</label>{{ pesPro.company_name|e }}</li>
+                    <li><label>注册地址：</label>{{ pesPro.reg_address|e }}</li>
+                    <li><label>生产地址：</label>{{ pesPro.produce_address|e }}</li>
+                    <li><label>类型：</label>{{ pesPro.type}}</li>
+                    <li><label>有效期：</label>{{ pesPro.validdate|e }}</li>
+                    <li><label>有效期自：</label>{{ pesPro.valid_from|e }}</li>
+                    <li><label>有效期至：</label>{{ pesPro.validto|e }}</li>
+                    <li><label>省份：</label>{{ pesPro.province|e }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </section>
+        {% endif %}
+        {% if data.bbd_licence_food_pro.results %}
+        <section class="panel b-a base_info">
+            <div class="panel-heading b-b"><span class="font-bold font-15 text-dark"> 食品生产许可证</span></div>
+            <div class="panel-body text-sm">
+                <ul class="company-base">
+                    {% for food in data.bbd_licence_food_pro.results %}
+                    <li><label>产品名称：</label>{{ food.product_name|e }}</li>
+                    <li><label>企业名称：</label>{{ food.company_name|e }}</li>
+                    <li><label>住所：</label>{{ food.location|e }}</li>
+                    <li><label>发证单位：</label>{{ food.issue_unit|e }}</li>
+                    <li><label>发证日期：</label>{{ food.issue_date|e }}</li>
+                    <li><label>检验方式：</label>{{ food.test_mode|e }}</li>
+                    <li><label>生产地址：</label>{{ food.produce_address|e }}</li>
+                    <li><label>证书有效期：</label>{{ food.validdate|e }}</li>
+                    <li><label>证书编号：</label>{{ food.certificate_no|e }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </section>
+        {% endif %}
+        {% if data.bbd_licence_medi_pro.results %}
+        <section class="panel b-a base_info">
+            <div class="panel-heading b-b"><span class="font-bold font-15 text-dark"> 药品生产许可证</span></div>
+            <div class="panel-body text-sm">
+                <ul class="company-base">
+                    {% for mediPro in data.bbd_licence_medi_pro.results %}
+                    <li><label>企业名称：</label>{{ mediPro.company_name|e }}</li>
+                    <li><label>法定代表人：</label>{{ mediPro.frname|e }}</li>
+                    <li><label>住所/注册地址：</label>{{ mediPro.reg_address|e }}</li>
+                    <li><label>生产范围：</label>{{ mediPro.produce_scope|e }}</li>
+                    <li><label>生产地址：</label>{{ mediPro.produce_address|e }}</li>
+                    <li><label>企业类型：</label>{{ mediPro.company_type|e }}</li>
+                    <li><label>企业负责人：</label>{{ mediPro.principal|e }}</li>
+                    <li><label>发证日期：</label>{{ mediPro.issue_date|e }}</li>
+                    <li><label>有效期截止日：</label>{{ mediPro.validdate|e }}</li>
+                    <li><label>编号：</label>{{ mediPro.certificate_no|e }}</li>
+                    <li><label>备注：</label>{{ mediPro.remark|e }}</li>
+                    <li><label>省市/省份：</label>{{ mediPro.province|e }}</li>
+                    <li><label>分类码：</label>{{ mediPro.code|e }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </section>
+        {% endif %}
+        {% if data.bbd_licence_medi_oper.results %}
+        <section class="panel b-a base_info">
+            <div class="panel-heading b-b"><span class="font-bold font-15 text-dark"> 药品经营许可证</span></div>
+            <div class="panel-body text-sm">
+                <ul class="company-base">
+                    {% for oper in data.bbd_licence_medi_oper.results %}
+                    <li><label>企业名称：</label>{{ oper.company_name|e }}</li>
+                    <li><label>法定代表人：</label>{{ oper.frname|e }}</li>
+                    <li><label>注册地址：</label>{{ oper.reg_address|e }}</li>
+                    <li><label>经营范围：</label>{{ oper.business_scope|e }}</li>
+                    <li><label>仓库地址：</label>{{ oper.warehouse_address|e }}</li>
+                    <li><label>经营方式：</label>{{ oper.operate_mode|e }}</li>
+                    <li><label>企业负责人：</label>{{ oper.principal|e }}</li>
+                    <li><label>质量负责人：</label>{{ oper.quality_principal|e }}</li>
+                    <li><label>发证日期：</label>{{ oper.issue_date|e }}</li>
+                    <li><label>有效期至：</label>{{ oper.validdate|e }}</li>
+                    <li><label>证号：</label>{{ oper.certificate_no|e }}</li>
+                    <li><label>发证部门：</label>{{ oper.issueunit|e }}</li>
+                    <li><label>备注：</label>{{ oper.remark|e }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </section>
+        {% endif %}
+        {% if data.bbd_qua_cos_pro.results %}
+        <section class="panel b-a base_info">
+            <div class="panel-heading b-b"><span class="font-bold font-15 text-dark"> 化妆品生产许可证</span></div>
+            <div class="panel-body text-sm">
+
+                <ul class="company-base">
+                    {% for cosPro in data.bbd_qua_cos_pro.results %}
+                    <li><label>企业名称：</label>{{ cosPro.company_name|e }}</li>
+                    <li><label>住所：</label>{{ cosPro.location|e }}</li>
+                    <li><label>生产地址：</label>{{ cosPro.produce_address|e }}</li>
+                    <li><label>发证日期：</label>{{ cosPro.issue_date|e }}</li>
+                    <li><label>有效期：</label>{{ cosPro.validdate|e }}</li>
+                    <li><label>编号：</label>{{ cosPro.certificate_no|e }}</li>
+                    <li><label>明细：</label>{{ cosPro.details|e }}</li>
+                    <li><label>省市/省份：</label>{{ cosPro.province|e }}</li>
+                    <li><label>产品名称：</label>{{ cosPro.product_name|e }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </section>
+        {% endif %}
+        {% if data.bbd_gmp_auth.results %}
+        <section class="panel b-a base_info">
+            <div class="panel-heading b-b"><span class="font-bold font-15 text-dark"> GMP认证</span></div>
+            <div class="panel-body text-sm">
+                <ul class="company-base">
+                    {% for gmp in data.bbd_gmp_auth.results %}
+                    <li><label>企业名称：</label>{{ gmp.company_name|e }}</li>
+                    <li><label>住所：</label>{{ gmp.location|e }}</li>
+                    <li><label>认证范围：</label>{{ gmp.legalize_scope|e }}</li>
+                    <li><label>发证日期：</label>{{ gmp.issue_date|e }}</li>
+                    <li><label>有效期/有效期截止日：</label>{{ gmp.valid_period|e }}</li>
+                    <li><label>证书编号/许可证编号：</label>{{ gmp.certificate_no|e }}</li>
+                    <li><label>备注：</label>{{ gmp.remark|e }}</li>
+                    <li><label>省市/省份：</label>{{ gmp.province|e }}</li>
+                    <li><label>认证GMP版本：</label>{{ gmp.legalize_version|e }}</li>
+                    <li><label>批准延续的认证范围：</label>{{ gmp.continue_legalize_scope|e }}</li>
+                    <li><label>批准延续日期：</label>{{ gmp.continue_date|e }}</li>
+                    <li><label>有效期延续至：</label>{{ gmp.validdate|e }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </section>
+        {% endif %}
+    </body>
 </html>
+
+
+
+
+
+
+
+
+

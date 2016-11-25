@@ -4,7 +4,69 @@
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
-<body>
-
-</body>
+    <body>
+    <section class="panel b-a clear">
+        <div class="panel-heading b-b">
+            <span class="font-bold font-15 text-dark"> 关联方信息</span>
+            <span class="badge btn-success"></span>
+            <a class="pull-right" href="javascript:;" data-toggle="modal" data-target="#appDownloadModal"></a>
+        </div>
+        <div class="clear  m-b"></div>
+        <div class="col-md-12">
+            <section class="panel panel-default patentdetailbox">
+                {% if data.bbd_rel.results %}
+                <table class="table table-bordered">
+                    <tbody>
+                        <tr>
+                            <th>名称</th>
+                            <th>数据</th>
+                            <th>备注</th>
+                        </tr>
+                        {% for rel in data.bbd_rel.results %}
+                        <tr>
+                            <td colspan="3" style="text-align: center">{{loop.index}}</td>
+                        </tr>
+                        <tr>
+                            <td width="55%"> <a target="_blank" class="text-lg">投资方</a></td>
+                            <td>{{ rel.investor|e }}</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td width="55%"> <a target="_blank" class="text-lg">被投资方</a></td>
+                            <td>{{ rel.investee|e }}</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td width="55%"> <a target="_blank" class="text-lg">关系</a></td>
+                            <td>{{ rel.rel|e }}</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td width="55%"> <a target="_blank" class="text-lg">投资方维度</a></td>
+                            <td>{{ rel.investor_degree|e }}</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td width="55%"> <a target="_blank" class="text-lg">被投资方维度</a></td>
+                            <td>{{ rel.investee_degree|e }}</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td width="55%"> <a target="_blank" class="text-lg">关系类型</a></td>
+                            <td>{{ rel.rel_type|e }}</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td width="55%"> <a target="_blank" class="text-lg">是否自然人</a></td>
+                            <td>{{ rel.is_natural|e }}</td>
+                            <td></td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+                {% endif %}
+            </section>
+        </div>
+    </section>
+    </body>
 </html>

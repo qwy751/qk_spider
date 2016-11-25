@@ -4,7 +4,150 @@
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
-<body>
-
-</body>
+    <body>
+        {% if data.bbd_dishonesty.results %}
+        <section class="panel b-a base_info">
+            <div class="panel-heading b-b"><span class="font-bold font-15 text-dark"> 失信被执行人</span></div>
+            <div class="panel-body text-sm">
+                <ul class="company-base">
+                    {% for dishonesty in data.bbd_dishonesty.results %}
+                    <li><label>被执行人姓名或名称： </label>{{ dishonesty.pname|e }}</li>
+                    <li><label>身份证号码或组织机构代码： </label>{{ dishonesty.pname_id|e }}</li>
+                    <li><label>法定代表人或者负责人姓名： </label>{{ dishonesty.frname|e }}</li>
+                    <li><label>执行法院：</label>{{ dishonesty.exec_court_name|e }}</li>
+                    <li><label>省份：</label>{{ dishonesty.province|e }}</li>
+                    <li><label>执行依据文号：</label>{{ dishonesty.exe_code|e }}</li>
+                    <li><label>立案时间：</label>{{ dishonesty.case_create_time|e }}</li>
+                    <li><label>案号：</label>{{ dishonesty.case_code|e }}</li>
+                    <li><label>做出执行依据单位：</label>{{ dishonesty.exec_basunit|e }}</li>
+                    <li><label>生效法律文书确定义务：</label>{{ dishonesty.definiteo_bligation|e }}</li>
+                    <li><label>被执行人的履行情况：</label>{{ dishonesty.perform_degree|e }}</li>
+                    <li><label>发布时间：</label>{{ dishonesty.pubdate|e }}</li>
+                    <li><label>证照类型：</label>{{ dishonesty.idtype|e }}</li>
+                    <li><label>数据源：</label>{{ dishonesty.bbd_source|e }}</li>
+                    <li class="comp-gen-txarea"><label>失信被执行人行为具体情形：</label>{{ dishonesty.concrete_situation|e }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </section>
+        {% endif %}
+        {% if data.bbd_zhixing.results %}
+        <section class="panel b-a base_info">
+            <div class="panel-heading b-b"><span class="font-bold font-15 text-dark"> 被执行人</span></div>
+            <div class="panel-body text-sm">
+                <ul class="company-base">
+                    {% for zhixing in data.bbd_zhixing.results %}
+                    <li><label>单位名称： </label>{{ zhixing.company_name|e }}</li>
+                    <li><label>被执行人姓名或名称： </label>{{ zhixing.pname|e }}</li>
+                    <li><label>案件状态： </label>{{ zhixing.case_state|e }}</li>
+                    <li><label>身份证号码或组织机构代码： </label>{{ zhixing.pname_id|e }}</li>
+                    <li><label>执行法院：</label>{{ zhixing.exec_court_name|e }}</li>
+                    <li><label>立案时间：</label>{{ zhixing.case_create_time|e }}</li>
+                    <li><label>案号：</label>{{ zhixing.case_code|e }}</li>
+                    <li><label>执行标的：</label>{{ zhixing.exec_subject|e }}</li>
+                    <li><label>数据源：</label>{{ zhixing.bbd_source|e }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </section>
+        {% endif %}
+        {% if data.bbd_ktgg.results %}
+        <section class="panel b-a base_info">
+            <div class="panel-heading b-b"><span class="font-bold font-15 text-dark"> 开庭公告</span></div>
+            <div class="panel-body text-sm">
+                <ul class="company-base">
+                    {% for ktgg in data.bbd_ktgg.results %}
+                    <li><label>案由： </label>{{ ktgg.action_cause|e }}</li>
+                    <li><label>当事人： </label>{{ ktgg.litigant|e }}</li>
+                    <li><label>案号：</label>{{ ktgg.case_code|e }}</li>
+                    <li><label>开庭日期： </label>{{ ktgg.trial_date|e }}</li>
+                    <li><label>数据源：</label>{{ ktgg.bbd_source|e }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </section>
+        {% endif %}
+        {% if data.bbd_zgcpwsw.results %}
+        <section class="panel b-a base_info">
+            <div class="panel-heading b-b"><span class="font-bold font-15 text-dark"> 裁判文书</span></div>
+            <div class="panel-body text-sm">
+                <ul class="company-base">
+                    {% for zgcpwsw in data.bbd_zgcpwsw.results %}
+                    <li><label>当事人： </label>{{ zgcpwsw.litigant|e }}</li>
+                    <li><label>案件结果： </label>{{ zgcpwsw.caseout_come|e }}</li>
+                    <li><label>文书类型： </label>{{ zgcpwsw.doc_type|e }}</li>
+                    <li><label>审理程序： </label>{{ zgcpwsw.ju_proc|e }}</li>
+                    <li><label>案号： </label>{{ zgcpwsw.casecode|e }}</li>
+                    <li><label>裁判日期： </label>{{ zgcpwsw.sentence_date|e }}</li>
+                    <li><label>链接： </label>{{ zgcpwsw.bbd_url|e }}</li>
+                    <li><label>历审案例： </label>{{ zgcpwsw.historycase|e }}</li>
+                    <li><label>更新时间： </label>{{ zgcpwsw.update|e }}</li>
+                    <li><label>案由： </label>{{ zgcpwsw.action_cause|e }}</li>
+                    <li><label>审理法院： </label>{{ zgcpwsw.trial_court|e }}</li>
+                    <li><label>当事人类型： </label>{{ zgcpwsw.litigant_type|e }}</li>
+                    <li><label>关联文书： </label>{{ zgcpwsw.rel_doc|e }}</li>
+                    <li><label>案件标题： </label>{{ zgcpwsw.title|e }}</li>
+                    <li><label>案件类型： </label>{{ zgcpwsw.case_type|e }}</li>
+                    <li><label>法院当事人： </label>{{ zgcpwsw.court_litigant|e }}</li>
+                    <li><label>受理费： </label>{{ zgcpwsw.court_acceptance_fee|e }}</li>
+                    <li><label>关联文书URL： </label>{{ zgcpwsw.rel_doc_url|e }}</li>
+                    <li><label>数据源：</label>{{ zgcpwsw.bbd_source|e }}</li>
+                    <li class="comp-gen-txarea"><label>起诉方当事人： </label>{{ zgcpwsw.pro_litigant|e }}</li>
+                    <li class="comp-gen-txarea"><label>起诉方其他相关人： </label>{{ zgcpwsw.pro_other_related|e }}</li>
+                    <li class="comp-gen-txarea"><label>被诉方当事人： </label>{{ zgcpwsw.def_litigant|e }}</li>
+                    <li class="comp-gen-txarea"><label>被诉方其他相关人： </label>{{ zgcpwsw.def_other_related|e }}</li>
+                    <li class="comp-gen-txarea"><label>适用法条： </label>{{ zgcpwsw.applicable_law|e }}</li>
+                    <li class="comp-gen-txarea"><label>文书内容：</label>{{ zgcpwsw.main|e }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </section>
+        {% endif %}
+        {% if data.bbd_rmfygg.results %}
+        <section class="panel b-a base_info">
+            <div class="panel-heading b-b"><span class="font-bold font-15 text-dark"> 法院公告</span></div>
+            <div class="panel-body text-sm">
+                <ul class="company-base">
+                    {% for rmfygg in data.bbd_rmfygg.results %}
+                    <li><label>公告人： </label>{{ rmfygg.notice_people|e }}</li>
+                    <li><label>公告时间：</label>{{ rmfygg.notice_time|e }}</li>
+                    <li><label>公告类型： </label>{{ rmfygg.notice_type|e }}</li>
+                    <li><label>当事人： </label>{{ rmfygg.litigant|e }}</li>
+                    <li><label>附件： </label>{{ rmfygg.attachment|e }}</li>
+                    <li><label>数据源：</label>{{ rmfygg.bbd_source|e }}</li>
+                    <li class="comp-gen-txarea"><label>公告内容： </label>{{ rmfygg.notice_content|e }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </section>
+        {% endif %}
+        {% if data.bbd_qyxg_qyqs.results %}
+        <section class="panel b-a base_info">
+            <div class="panel-heading b-b"><span class="font-bold font-15 text-dark"> 税务违法</span></div>
+            <div class="panel-body text-sm">
+                <ul class="company-base">
+                    {% for qyqs in data.bbd_qyxg_qyqs.results %}
+                    <li><label>欠税人名称： </label>{{ qyqs.defaulteroftax_name|e }}</li>
+                    <li><label>纳税人识别号：</label>{{ qyqs.taxpayer_id|e }}</li>
+                    <li><label>法定代表人： </label>{{ qyqs.frname|e }}</li>
+                    <li><label>法人代表证件号码： </label>{{ qyqs.frname_idno|e }}</li>
+                    <li><label>生产经营地址： </label>{{ qyqs. line_operation_address|e }}</li>
+                    <li><label>主管税务机关：</label>{{ qyqs.tax_authorities|e }}</li>
+                    <li><label>当前状态： </label>{{ qyqs.current_state|e }}</li>
+                    <li><label>欠税税种：</label>{{ qyqs.taxes_category|e }}</li>
+                    <li><label>欠税金额（元）： </label>{{ qyqs.taxes_amount|e }}</li>
+                    <li><label>欠税余额： </label>{{ qyqs.taxes_residual|e }}</li>
+                    <li><label>当前新时间发生的欠税金额（元）： </label>{{ qyqs.newtime_taxes_amount|e }}</li>
+                    <li><label>欠税时间起：</label>{{ qyqs.taxes_time_start|e }}</li>
+                    <li><label>欠税时间止： </label>{{ qyqs.taxes_time_end|e }}</li>
+                    <li><label>欠税时间：</label>{{ qyqs.taxes_time}}</li>
+                    <li><label>公司关联企业唯一ID列表： </label>{{ qyqs.bbd_qyxx_company_id|e }}</li>
+                    <li><label>分支机构关联企业唯一ID列表： </label>{{ qyqs.bbd_qyxx_branch_id|e }}</li>
+                    <li><label>数据源：</label>{{ qyqs.bbd_source|e }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </section>
+        {% endif %}
+    </body>
 </html>
